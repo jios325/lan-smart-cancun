@@ -1,0 +1,57 @@
+
+btn(color, bg, border, bordersize, shadow)
+	color: color
+	if shadow
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.6)
+	background-color: bg
+	if border
+		if bordersize
+			border: bordersize solid border
+		else
+			border: 1px solid border
+	else
+		border: none
+	&:focus
+		outline: 0px
+	&:hover
+		background-color: darken(bg, 30%)
+	&:active
+		box-shadow: inset 3px 3px 0px rgba(0,0,0,0.1)
+		
+// circle_img(width, height, margin, border, borderColor)
+// 	width: width
+// 	height: height
+// 	border-radius: 50%;
+// 	margin: margin;
+// 	object-fit: cover;
+// 	object-position: center right;
+// 	overflow hidden
+// 	if border
+// 		border border solid borderColor
+	
+
+// cssSprite( $spriteVals,$hover )
+// 	width: $spriteVals[0]
+// 	height: $spriteVals[1]
+// 	background-repeat: no-repeat
+// 	background-image: url( $spriteVals[2] )
+// 	background-position: $spriteVals[3] $spriteVals[4]
+// 	+from-width(5)
+// 		// background-image: url( $spriteVals[2] )
+// 		background-position: $hover[3] $hover[4]
+// 		&:hover
+// 			// background-image: url( $spriteVals[2] )
+// 			background-position: $spriteVals[3] $spriteVals[4]
+// 	@media only screen and ( -webkit-min-device-pixel-ratio: 2 ), only screen and ( min-device-pixel-ratio: 2 ) 
+// 		background-image: url( $spriteVals[5] )
+// 		background-size: $bgiSizeW $bgiSizeH
+		
+// cssSpriteBlanco( $spriteVals )
+// 	width: $spriteVals[0]
+// 	height: $spriteVals[1]
+// 	background-repeat: no-repeat
+// 	background-image: url( $spriteVals[2] )
+// 	background-position: $spriteVals[3] $spriteVals[4]
+// 	@media only screen and ( -webkit-min-device-pixel-ratio: 2 ), only screen and ( min-device-pixel-ratio: 2 ) 
+// 		background-image: url( $spriteVals[5] )
+// 		background-size: $bgiSizeWB $bgiSizeHB 

@@ -1,0 +1,8 @@
+{
+  "baseAbsolute": "https://localhost:9000/",
+  "assetPath": "https://localhost:9000/",
+  "idiomajs":"es",
+  "lang":[
+    {"nombre":"Inglés","url":"https://localhost:9000/en/"}
+  ]
+}
