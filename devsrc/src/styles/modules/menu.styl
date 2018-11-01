@@ -1,0 +1,123 @@
+
+header
+	nav
+		text-transform uppercase
+		z-index: $zi-menu
+		line-height: 0px
+		position fixed
+		width 100%
+		> ul
+			&.mobile_bar
+				// background white
+				// color black
+				color white
+				>li 
+					> a
+						padding 0 20px
+						font-size 30px
+						height auto
+						white-space nowrap
+						cursor pointer
+						&.icon
+							&:before
+								line-height 60px
+								vertical-align middle
+			&.principal
+				background $gocColor
+				color white
+				text-align center
+				height 100vh
+				
+				position absolute
+				top -100vh
+				left 0
+				width 100%
+				visibility hidden
+				transition: 0.5s all ease
+				+from-width(5)
+					background none
+					height 100px
+					position fixed
+					top 0
+					visibility visible
+					display flex
+					flex-flow row
+					flex-wrap wrap
+					align-items center
+					justify-content center
+				> ul
+					+from-width(5)
+						display flex
+						flex-flow row
+						flex-wrap wrap
+						align-items center
+						justify-content center	
+				li
+					> a
+						line-height 60px
+						height auto
+						white-space nowrap
+						cursor pointer
+						font-size 14px
+						&.icon
+							&:before
+								line-height 60px
+								vertical-align middle
+					+from-width(5)
+						float left
+						> a
+							padding 0 10px
+							font-size 10px
+					+from-width(6)
+						> a
+							padding 0 10px
+							font-size 12px
+					&.button_close
+						text-align left
+						> a
+							padding 0 20px
+							font-size 30px
+					&.active
+					&:hover
+						+from-width(5)
+							background  rgba(white, .21)
+						> a
+							font-weight 600
+							+from-width(5)
+								font-weight 400
+								
+				&.opened
+					top 0
+					visibility visible	
+				.logo
+					max-width 100px	
+				.lang_m
+					position absolute
+					left 50%
+					bottom 5%
+					transform translate(-50%, -10%)
+					font-size 0
+					li
+						display inline-block
+						width 70px
+						a
+							line-height 50px
+						&.active
+						&:hover
+							background rgba(216,216,216,0.5)	
+		&.fixed_nav
+			>ul
+				&.mobile_bar
+					background white
+					color $gray-32
+				&.principal
+					+from-width(5)
+						background white
+						color $gray-32
+						li
+							&.active
+							&:hover
+								background  rgba($gray-32,.21)
+								> a
+									font-weight 600
+			

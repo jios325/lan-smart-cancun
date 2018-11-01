@@ -1,2 +1,3 @@
-console.log('hola');
-console.log('kha x 2')
+import './modules/menu'
+
+import './actions/sticky'
