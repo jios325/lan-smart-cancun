@@ -1,0 +1,56 @@
+.visible
+	&-xs,&-sm,&-md,&-lg
+		display:none!important
+	&-inline-xs,&-inline-sm,&-inline-md,&-inline-lg
+		display:none!important
+	&-flex-xs,&-flex-sm,&-flex-md,&-flex-lg
+		display:none!important
+	//@media only screen and (max-width: 767px)
+	+between(0,3,anti-overlap:-1px)
+		&-xs
+			display:block!important
+		&-inline-xs
+			display:inline-block!important
+		&-flex-xs
+			display:flex!important
+	//Tablets @media only screen and (min-width: 768px) and (max-width: 1023px)
+	+from-width(4, anti-overlap:false)
+		&-sm
+			display:block!important
+		&-inline-sm
+			display:inline-block!important
+		&-flex-sm
+			display:flex!important
+	//Small Desktops @media only screen and (min-width: 1024px)
+	+from-width(5)
+		&-md
+			display:block!important
+		&-inline-md
+			display:inline-block!important
+		&-flex-md
+			display:flex!important
+	//Desktops @media only screen and (min-width: 1201px)
+	+from-width(6)
+		&-lg
+			display:block!important
+		&-inline-lg
+			display:inline-block!important
+		&-flex-lg
+			display:flex!important
+.hidden
+	display none!important
+	+between(0,3,anti-overlap:-1px)
+		&-xs
+			display:none!important
+	//Tablets ()
+	+from-width(4, anti-overlap:false)
+		&-sm
+			display:none!important
+	//small Desktops
+	+from-width(5)
+		&-md
+			display:none!important
+	// Desktops
+	+from-width(6)
+		&-lg
+			display:none!important
