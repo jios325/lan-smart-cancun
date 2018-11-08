@@ -194,6 +194,25 @@
 										content '\e012'
 										font-family $oasis-font
 										margin-right 10px
+					&:last-child
+						.map-container--item--container
+							display flex
+							flex-flow row
+							flex-wrap wrap
+							align-items center
+							justify-content center
+							text-align center
+							+from-width(5)
+								overflow hidden
+								height 500px
+								margin-top 0
+							img
+								height: 100%;
+								width: 100%;
+								object-fit: cover;
+								display: block;
+								flex-shrink: 0;
+							
 							
 
 

@@ -195,7 +195,10 @@
 						
 					</div>
 					<div class="map-container--item">
-						<img src="{{asset('img/mapas/'.$hotel->uri.'.jpg')}}" alt="">
+						<div class="map-container--item--container">
+							<img src="{{asset('img/mapas/'.$hotel->uri.'.jpg')}}" alt="">
+						</div>
+						
 					</div>
 				</div>
 			</div>
