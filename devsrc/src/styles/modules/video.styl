@@ -1,0 +1,73 @@
+
+.youtube-player 
+	position: relative;
+	// padding-bottom: 56.23%;
+	padding-bottom 49.21%
+	/* Use 75% for 4:3 videos */
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	background: #000;
+	margin: 5px;
+	&:hover
+		.play
+			box-shadow 0 1px 20px 1px rgba(0,0,0,.5)
+			.icon
+				&:before
+					text-shadow 0 1px 10px rgba(0,0,0,.5)
+
+.youtube-player iframe 
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: transparent;
+
+
+.youtube-player img 
+	bottom: 0;
+	display: block;
+	left: 0;
+	margin: auto;
+	max-width: 100%;
+	width: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border: none;
+	height: auto;
+	cursor: pointer;
+	-webkit-transition: .4s all;
+	-moz-transition: .4s all;
+	transition: .4s all;
+
+
+// .youtube-player img:hover 
+// 	-webkit-filter: brightness(75%);
+
+
+.youtube-player .play 
+	// height: 90px;
+	// width: 90px;
+	left: 50%;
+	top: 50%;
+	// margin-left: -45px;
+	// margin-top: -45px;
+	position: absolute;
+	// background: url("../img/logos/play.png") no-repeat;
+	cursor: pointer;
+	transform: translate(-50%,-50%)
+	circle_img(90px, 90px, 2px, 0, 0)
+	background rgba(white, .3)
+	transition: .4s all;
+	.icon
+		&:before
+			line-height: 90px;
+			font-size: 30px;
+			color: white;
+			padding-left: 7px;
+			transition: .4s all;
+	
+

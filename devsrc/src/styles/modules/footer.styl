@@ -1,0 +1,85 @@
+footer.footer
+	background black
+	color white
+	padding 30px 
+	letter-spacing 1px
+	+from-width(5)
+		padding 30px 65px
+.footer
+	
+	&_top
+		text-align center
+		span
+			font-size 14px
+			line-height 18px
+			font-weight 300
+		
+		&_social
+			padding-top 15px
+			i
+				font-size 30px
+				line-height 35px
+				padding 0 10px
+	&_bottom
+		display flex
+		flex-flow row
+		flex-wrap wrap
+		align-items center
+		justify-content center
+		padding 10px 0
+		+from-width(5)
+			padding 0
+		ul
+			display flex
+			flex-flow row
+			flex-wrap wrap
+			align-items center
+			justify-content center
+			li
+				float left
+				text-align center
+				a
+					font-size 12px
+					line-height 30px
+					font-weight 300
+					padding 0 5px
+					+from-width(5)
+						padding 0 15px
+				&.logo
+					i:before
+						font-size 35px
+						line-height 40px
+				
+			&.logo
+				min-height inherit
+				padding-top 10px
+				li.logo
+					i:before
+						font-size 35px
+						line-height 40px
+	&--redes-sociales
+		text-align center
+		padding 50px 0
+		h3
+			font-size 14px
+			line-height 16px
+			letter-spacing 2px
+			font-weight 400
+			+from-width(4)
+				font-size 15px
+				line-height 18px
+				letter-spacing 3.5px
+		&--content
+			padding-top 20px
+			a
+				&:nth-child(1)
+					margin-left 20px
+				&:nth-child(1)
+				&:nth-child(2)
+				&:last-child
+					margin-right 20px
+			i
+				&:before
+					font-size 35px
+					line-height 40px
+		

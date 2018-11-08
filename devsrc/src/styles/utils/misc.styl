@@ -1,0 +1,154 @@
+// positions --------------------------------------------
+.rel
+	position relative
+.zi
+	&-1
+		z-index 1
+	&-2
+		z-index 2
+		
+// display --------------------------------------------
+.hide
+	display none
+// text --------------------------------------------
+.title
+	&--home
+		color white
+		font-family $gotham-book
+		text-shadow 0 2px 24px rgba(0,0,0,0.5)
+		font-size 20px
+		line-height 35px
+		text-align center
+		+from-width(5)
+			font-size 25px
+			letter-spacing 7px
+			line-height 42px
+			text-align left
+		+from-width(6)
+			font-size 33px
+			line-height 58px
+		+from-width(7)
+			font-size 35px
+			letter-spacing 10px
+		
+		span
+			display block
+			&.apellido_pastilla
+				font-family $gotham-light
+				font-weight 100
+				line-height 25px
+	&--booking
+		text-transform uppercase
+		font-weight 500
+		letter-spacing 3px
+		text-align center
+		font-size 20px
+		padding 1rem 0
+	&--section
+		font-size 15px
+		letter-spacing 2.5px
+		line-height 18px
+		text-align center
+		width 100%
+		margin-bottom 15px
+		text-transform uppercase
+		font-weight 400
+		padding 20px 0
+		+from-width(5)
+			font-size 25px
+			letter-spacing 8px
+			line-height 30px
+		&:after
+			content ''
+			border-bottom 1px solid black
+			display block
+			width 50px
+			margin-left calc(50% - 25px)
+			margin-top 5px
+			+from-width(5)
+				width 4%
+				margin-left calc(50% - 2%)	
+		&.no-line
+			&:after
+				display none	
+	&--popup
+		text-transform uppercase
+		color white
+		font-size 20px
+		letter-spacing 2.5px
+		font-weight 500
+		padding 20px 0
+		text-align center
+		+from-width(5)
+			letter-spacing 5px
+// backgrounds --------------------------------------------
+.backgrounds
+	background-position center top !important
+	background-repeat no-repeat !important
+	background-size cover !important
+	min-height 100%
+	
+.gradient
+	// background-color: #000000
+	background-size cover
+	position absolute
+	height 100%
+	width 100%
+	left 0
+	top 0
+	z-index 1
+	&-menu
+		+from-width(5)
+			background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%);
+			height 100px
+			width 100%
+			transform translateY(100px)
+			opacity .2
+			position fixed
+			z-index 2
+	&-home
+		background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.19) 100%), linear-gradient(180deg, rgba(255,255,255,0.34) 0%, rgba(0,0,0,0.35) 100%);
+	&-card-shadow
+		+from-width(4)
+			background: radial-gradient(35% 45% at center, rgb(0, 0, 0) -70%, rgba(255, 255, 255, 0) 155%);
+			height: 35px;
+			width: 300px;
+			position: absolute;
+			bottom: -14px;
+			left: 50%;
+			transform: translateX(-50%);
+			filter: blur(5px);
+	&-popup
+		&-dark
+			background linear-gradient(0deg, rgba($gray-32,.9) 100%, rgba($gray-32,.9) 100%)
+		
+//divisor --------------------------------------------
+.divisor
+	width 100%
+	height 40px
+	+from-width(5)
+		height 65px
+//viewmore --------------------------------------------
+.view_more
+	.morelink 
+		text-decoration:underline;
+		outline: none;
+		font-weight 500
+	.morecontent 
+		span
+			display: none;
+			transition: all .25s ease
+//list 
+.li-diamond
+	position relative
+	&:before
+		content: '';
+		height: 8px
+		width: 8px
+		background: white
+		display: block;
+		position: absolute;
+		transform: rotate(45deg) translateY(-50%)
+		top: 50%
+		left: -25px
+		border-radius 1.5px

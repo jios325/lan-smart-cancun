@@ -1,0 +1,77 @@
+.card
+	&--container
+		display flex
+		flex-flow row
+		flex-wrap wrap
+		justify-content center
+	&--topimage
+		&--item
+			padding 10px 0
+			&__image
+				position relative
+				&--title
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translate(-50%,0);
+					width: 100%;
+					padding-top 20px
+					text-align center
+					h2
+					h3
+						color white
+						font-size 20px
+						line-height 24px
+						text-transform uppercase
+						font-weight 400
+						letter-spacing 1px
+						+from-width(5)
+							letter-spacing 5px
+				&--buttons
+					// padding-top 10px
+					text-align center
+					a
+						width auto
+						font-size 10px
+						&:nth-child(2)
+							margin 10px 0
+					+from-width(4)
+						position absolute
+						left 0
+						bottom 0
+						width 100%
+						height 13%
+						background linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0,0,0,0.5) 100%)
+						padding 0
+						a:nth-child(2)
+							margin 0 
+						a
+							min-width 30.33%
+					+from-width(5)
+						height 23%
+					+from-width(6)
+						height 17%
+			&__info
+				color $gray-32
+				padding 10px 0
+				text-align center
+				.card--imageinfo--item__info--descr
+					font-size 12px
+					line-height 20px
+					letter-spacing 1px
+					padding 10px 0
+					text-align justify
+					margin 0 20px
+					+from-width(5)
+						text-align: center
+	&--home--room
+		flex-basis 100%
+		max-width 100%
+		+from-width(5)
+			flex-basis 50%
+			max-width 50%
+			&:first-child
+				padding-right 9px
+			&:last-child
+				padding-left 9px
+		

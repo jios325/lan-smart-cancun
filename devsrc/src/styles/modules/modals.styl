@@ -1,0 +1,103 @@
+.white-popup
+	background: #fff
+	max-width 960px
+	margin:0 auto
+	position relative
+	padding: 40px
+	&-xs
+		padding: 30px
+		max-width 760px
+		
+.deco
+	&-popup
+		position relative
+		margin 0 auto
+		padding 0
+		max-width 960px
+		background url('../img/modals/bkgr1.png')
+		color white
+		&-container
+			padding 40px
+			position relative
+			z-index 1
+			+from-width(4)
+				max-width 80%
+				margin 0 auto
+				text-align center
+		.mfp-close
+			color white
+			width: 80%;
+			right: 50%;
+			top 20px
+			margin: 0 auto;
+			transform: translateX(50%);
+			opacity: 1;
+			text-align right
+			&:after
+				content '\e007'
+				font-family $oasis-font
+				font-size 30px
+				color white
+				line-height 44px
+			
+.list_items
+	display inline-block
+	padding 50px 0
+	+from-width(4)
+		max-width 80%
+	ul
+		> li
+			font-weight 200
+			font-size 16px
+			line-height 18px
+			position relative
+			margin-left 10px
+			letter-spacing 1px
+			+from-width(4)
+				font-size 14px
+				line-height 16px
+		
+		&.icon
+			li
+				margin-left 70px
+				line-height 22px
+				+from-width(4)
+					margin-left 10px
+				&.costo_extra
+					&:after
+						content: '';
+						width: 8px;
+						height: 8px;
+						border-radius: 100%;
+						background: #30E9CA
+						display inline-block
+						// position: absolute;
+						// left: -20px;
+						// top: 50%;
+						// transform: translateY(-50%);
+.info_costo_extra
+	text-align right
+	span
+		color #30E9CA
+		font-weight 100
+		font-size 13px
+		letter-spacing
+		&:before
+			content: '';
+			width: 8px;
+			height: 8px;
+			border-radius: 100%;
+			background: #30E9CA
+			display inline-block
+			margin-right 10px
+			
+.col1-col2
+	li
+		width 90%
+		text-align justify
+		padding 5px
+		+from-width(4)
+			padding 10px 10px 10px 0
+			width calc(50% - 10px)
+			float left
+			text-align left

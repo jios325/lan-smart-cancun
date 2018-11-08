@@ -1,5 +1,6 @@
 
 header
+	position relative
 	nav
 		text-transform uppercase
 		z-index: $zi-menu
@@ -7,10 +8,15 @@ header
 		position fixed
 		width 100%
 		> ul
+			> li
+				cursor pointer
 			&.mobile_bar
-				// background white
-				// color black
 				color white
+				display flex
+				flex-flow row
+				flex-wrap wrap
+				align-items center
+				justify-content left
 				>li 
 					> a
 						padding 0 20px
@@ -22,8 +28,28 @@ header
 							&:before
 								line-height 60px
 								vertical-align middle
+					&.namehotel
+						position absolute
+						left 50%
+						transform translateX(-50%)
+						max-height 60px
+						a
+							text-transform uppercase
+							font-size 10px
+							line-height 70px
+							font-family $gotham-light
+							&:before
+								content '\e00f'
+								font-family $oasis-font
+								text-align center
+								font-size 12px
+								position absolute
+								left 50%
+								top -20px
+								transform translateX(-50%)
+								
 			&.principal
-				background $gocColor
+				// background $gocBkg
 				color white
 				text-align center
 				height 100vh
@@ -52,12 +78,20 @@ header
 						flex-wrap wrap
 						align-items center
 						justify-content center	
+					> li
+						> a
+							+from-width(5)
+								padding 0 15px
+								font-size 12px
+							+from-width(6)
+								padding 0 20px
+					
 				li
+					height auto
+					white-space nowrap
+					cursor pointer
 					> a
-						line-height 60px
-						height auto
-						white-space nowrap
-						cursor pointer
+						line-height 40px
 						font-size 14px
 						&.icon
 							&:before
@@ -65,18 +99,6 @@ header
 								vertical-align middle
 					+from-width(5)
 						float left
-						> a
-							padding 0 10px
-							font-size 10px
-					+from-width(6)
-						> a
-							padding 0 10px
-							font-size 12px
-					&.button_close
-						text-align left
-						> a
-							padding 0 20px
-							font-size 30px
 					&.active
 					&:hover
 						+from-width(5)
@@ -85,12 +107,24 @@ header
 							font-weight 600
 							+from-width(5)
 								font-weight 400
-								
-				&.opened
-					top 0
-					visibility visible	
-				.logo
-					max-width 100px	
+				.logo_field
+					+from-width(5)
+						&.active
+						&:hover
+							background none !important
+					a
+						line-height 0
+					img
+						max-width 100px
+					.icon
+						font-size 50px
+						vertical-align middle
+						// color $gocColor
+				.button_close
+					text-align left
+					> a
+						padding 0 20px
+						font-size 30px
 				.lang_m
 					position absolute
 					left 50%
@@ -104,7 +138,62 @@ header
 							line-height 50px
 						&.active
 						&:hover
-							background rgba(216,216,216,0.5)	
+							background rgba(216,216,216,0.5)
+				.lang_d
+					> li
+						line-height 60px
+						> a
+							padding 10px
+							line-height 30px
+							circle_img(30px, 30px, 2px, 0, 0)
+							background rgba($gray-32, .5)
+							overflow visible
+							position relative
+							> .icon
+								&:before
+									line-height 30px
+									vertical-align middle
+									font-size 13px
+							&:hover
+								box-shadow 0 0 4px rgba(0,0,0,.5)
+						&:hover
+							background none
+						&.language
+							> a
+								&:after
+									content '\e003'
+									font-family $oasis-font
+									color white
+									font-size 16px
+									position absolute
+									right -20px
+									line-height 60px
+								&.open
+									&:after
+										content '\e006'
+							.submenu
+								position absolute
+								top 75px
+								// visibility hidden
+								// transition: 0.2s all ease
+								width 40px
+								display none
+								> li
+									display block
+									background white
+									// color $gocColor
+									width 100%
+									line-height 0
+									a
+										line-height 35px
+										font-size 12px
+									&.active
+									&:hover
+										// background $gocBkg
+										color white
+				&.opened
+					top 0
+					visibility visible	
 		&.fixed_nav
 			>ul
 				&.mobile_bar
@@ -120,4 +209,17 @@ header
 								background  rgba($gray-32,.21)
 								> a
 									font-weight 600
-			
+					.lang_d
+						> li
+							> a
+								color white
+							&:hover
+								background none
+							&.language
+								> a
+									&:after
+										color $gray-32
+										
+
+										
+						

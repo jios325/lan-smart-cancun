@@ -1,2 +1,207 @@
-body
-	background gray
+// body
+	// height 200vh
+// 	background coral
+.main-section
+	&__home
+		&-container
+			position relative
+			z-index 1
+			padding-top 70px
+			+from-width(5)
+				position absolute
+				bottom 10%
+				width 100%
+				padding 0 1rem
+		&-head_home
+			height 100vh
+			position relative
+			+from-width(5)
+				height 70vh
+		&-slick
+			color $gray-32
+			font-size 16px
+		&-habitaciones
+			&--container
+				padding-top 30px
+		&-galeria
+			.grid-gallery
+				display flex
+				flex-flow row
+				flex-wrap wrap
+				align-items center
+				justify-content center
+				text-align center
+				&--item
+					flex-basis 100%
+					max-width 100%
+					+from-width(5)
+						flex-basis 50%
+						max-width 50%
+						&:first-child
+							padding-right 9px
+						&:last-child
+							padding-left 9px
+					&-images
+						&--container
+							display flex
+							flex-flow row
+							flex-wrap wrap
+							align-items center
+							justify-content center
+							text-align center
+							margin-top 20px
+							+from-width(5)
+								overflow hidden
+								height 500px
+								margin-top 0
+							
+						&--item
+							position relative
+							+from-width(5)
+								&:nth-child(1)
+									padding-right 9px
+									a:hover
+										&:after
+											margin-right 9px
+											width calc(100% - 9px)
+											left 0
+								&:nth-child(2)
+									padding-left 9px
+									a:hover
+										&:after
+											margin-left 9px
+											width calc(100% - 9px)
+											left inherit
+											right 0
+								&:nth-child(3)
+									padding-top 18px
+									a:hover
+										&:after
+											margin-top 18px
+											height calc(100% - 18px)
+											top inherit
+											bottom 0
+							&:nth-child(1)
+							&:nth-child(2)
+								flex-basis 100%
+								max-width 100%
+								+from-width(5)
+									flex-basis 50%
+									max-width 50%
+									height 45%
+							&:nth-child(3)
+								flex-basis 100%
+								max-width 100%
+								height 55%
+							img
+								height: 100%;
+								width: 100%;
+								object-fit: cover;
+								display: block;
+								flex-shrink: 0;	
+							a:hover
+								+from-width(5)
+									&:after
+										content ''
+										background rgba(gray, 0.45)
+										width 100%
+										height 100%
+										position absolute
+										left 0
+										top 0
+									&:before
+										content '\e00f'
+										font-family $oasis-font
+										font-size 30px
+										color white
+										position absolute
+										left 50%
+										top 50%
+										transform translate(-50%,-50%)
+										z-index 1		
+					.youtube-player
+						padding-bottom 0
+						margin 0
+						max-height: 250px;
+						min-height: 250px;
+						+from-width(4)
+							max-height: 350px;
+							min-height: 350px;
+						+from-width(5)
+							max-height: 500px;
+							min-height: 500px;
+						img
+							height: 100%;
+							width: 100%;
+							object-fit: cover;
+							display: block;
+							flex-shrink: 0;	
+		&-ubicacion
+			.map-container
+				display flex
+				flex-flow row
+				flex-wrap wrap
+				align-items center
+				justify-content center
+				text-align center
+				&--item
+					flex-basis 100%
+					max-width 100%
+					color white
+					min-height 300px
+					+from-width(5)
+						flex-basis 50%
+						max-width 50%
+						min-height 500px
+					&:first-child
+						position relative
+						background url('../img/modals/bkgr1.png')
+						.map-contaner--item--content
+							position absolute
+							left 50%
+							top 45%
+							transform translate(-50%,-50%)
+							width 90%
+							margin 0 auto
+							z-index 2
+							+from-width(5)
+								width 60%
+							i.icon
+								font-size 30px
+								+from-width(5)
+									font-size 50px
+							h3
+								text-transform uppercase
+								font-size 20px
+								letter-spacing 6px
+								line-height 20px
+								font-weight 600
+								+from-width(5)
+									padding 50px 0 10px
+							span
+								display block
+								font-weight 200
+								padding 10px 0
+								font-size 13px
+								&.tel
+									&:before
+										content '\e000'
+										font-family $oasis-font
+										margin-right 10px
+										
+								&.location
+									&:before
+										content '\e012'
+										font-family $oasis-font
+										margin-right 10px
+							
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+.newsletter
+	position relative
+	.gradient
+		background-color: #000000;
+		background radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(0,0,0,0.5) 100%)
+		background-size cover
+		position absolute
+		height 100%
+		width 100%
+		left 0
+		top 0
+		z-index 1
+	&_contenedor
+		background url('../img/newsletter/footer-bkgr.jpg') center no-repeat
+		background-size cover
+		position relative
+		z-index 2
+		color white
+		padding 40px 0
+		.title
+			text-transform uppercase
+			font-size 25px
+			line-height 30px
+			font-weight 100
+			letter-spacing 1px
+			+from-width(5)
+				letter-spacing 6px
+			span
+				&:last-child
+					font-weight 600
+		.descr
+			font-size 14px
+			font-weight 100
+			line-height 16px
+			letter-spacing 1px
+			padding 10px 0
+			+from-width(5)
+				padding 20px 0
+		.sendmail
+			padding-bottom 20px
+			+from-width(5)
+				padding-top 20px
+				display flex
+				justify-content: center
+				align-items: center
+				margin:0 auto
+			input
+				width:100%
+				height: 55px;
+				font-size 16px
+				padding 0 22px
+				font-weight 200
+				border none
+				line-height 50px
+				display: block;
+				margin: 0 auto;
+				margin-bottom: 10px
+				color $gray-ab
+				text-align center
+				box-shadow inset 0 0 0 0 rgba(0,0,0,0.5)
+				+from-width(5)
+					width 330px
+					height 60px
+					margin-bottom: 0px
+					text-align left
+				&:focus
+					outline-offset unset
+			input.btn
+				width 100%
+				height 55px
+				line-height: 55px;
+				margin:0
+				text-align center
+				box-shadow 0 2px 4px 0 rgba(0,0,0,0.3)
+				color white
+				+from-width(5)
+					max-width: 225px
+					height: 60px;
+					display: inline-block;
+					line-height: 60px;
+		form
+			padding-top 40px
+			+from-width(5)
+				padding-top 0
+				
+			
+

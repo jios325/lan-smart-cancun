@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'hotelesen' =>  'Hoteles en ',
+    'hoteles' => 'hoteles',
+    'mapa' => 'mapa',
+    'ubicacion' =>  'ubicación',
+    'galeria'   =>  'galería',
+    'galeria_hotel' => 'Galería del hotel',
+    'ver_galeria'   =>  'ver galería',
+    'galeria_videos'   =>  'galería de videos',
+    'entretenimiento' => 'entretenimiento',
+    'entretenimiento_en_hotel' => 'entretenimiento en el hotel',
+    'tour_virtual'   =>  'tour virtual',
+    'ver_fotos'   =>  'ver fotos',
+    'ver_videos'   =>  'ver videos',
+    'actividades' => 'actividades deportivas',
+    'shows' => 'espectaculos',
+    'locaciones' => 'Locaciones',
+    'ver_googlemaps' => 'Ver en Google Maps',
+    'message_click' => 'click para cargar el mapa y ver detalles',
+    'map_descripcion' => 'Mapa de Ubicacion de nuestros hoteles Oasis Hotels & Resorts',
+    'map_descr' => 'Mapa de Ubicacion del hotel',
+    'del_hotel' => 'del hotel',
+    'en_el_hotel' => 'en el hotel',
+    'calendario_act' => 'Calendario de Actividades',
+    'calendario_shows' => 'Calendario Espectáculos',
+    'otros_hot_similares' => 'Otros hoteles similares a',
+    'video_de_hotel' => 'Video del hotel'
+];

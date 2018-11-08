@@ -1,0 +1,66 @@
+.booking
+	&-container
+		display none
+		+from-width(5)
+			display block
+	&-button
+		+from-width(5)
+			display none
+	&__home
+		position absolute
+		z-index $zi-booking
+		bottom 0
+		right 0
+		top inherit
+		width 100%
+		transition: 0.5s all ease
+		+from-width(5)
+			width 300px
+			right 50px
+			bottom inherit
+			top 100px
+			max-height 60vh
+			height 100%
+			+from-width(6)
+				width 350px
+			&.booking__fixed
+				width 235px
+				
+			.booking-container	
+				
+				// background rgba(white, .41)
+				border-radius 0 0 20px 20px
+				box-shadow 0 1px 5px 0 rgba(0,0,0,0.23)
+				
+				background-position center top !important
+				background-repeat no-repeat !important
+				background-size cover !important
+				min-height 100%
+			
+	&__fixed
+		position fixed
+		bottom inherit
+		top 100px
+		left inherit
+		width auto
+		height auto
+		.booking-container
+			display none
+		.booking-button
+			display block
+		.btn-reserva-booking
+			height 45px
+			line-height 45px
+			font-size 12px	
+		&--mobile
+			position fixed
+			bottom inherit
+			top 60px
+			width 235px
+			left inherit
+			.btn-reserva-booking
+				height 45px
+				line-height 45px
+				font-size 14px
+				padding-bottom 20px
+		

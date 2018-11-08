@@ -4,11 +4,19 @@
 			<li class="button_open">
 				<a class="icon icon-menu"></a>
 			</li>
+			<li class="namehotel">
+				<a>
+					{{$hotel->nombre_en}}
+				</a>
+			</li>
 		</ul>
 		<ul class="principal">
 			<ul class="col-xs-12 col-md-2">
-				<li class="visible-md visible-lg">
-					<a><img class="logo" src="https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/img/hoteles/grand-oasis-cancun/grand-oasis-cancun.png"></a>
+				<li class="visible-md visible-lg logo_field">
+					<a>
+						<img class="logo" src="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/' . $hotel->logo}}">
+						<i class="icon icon-icono-oasis hide"></i>
+					</a>
 				</li>
 				<li class="hidden-md hidden-lg button_close">
 					<a class="icon icon-cross"></a>
@@ -16,49 +24,52 @@
 			</ul>
 			<ul class="col-xs-12 col-md-8">
 				<li class="active">
-					<a>home</a>
+					<a>{{__('menu.inicio')}}</a>
 				</li>
 				<li>
-					<a>habitaciones</a>
+					<a>{{__('menu.habitaciones')}}</a>
 				</li>
 				<li>
-					<a>restaurantes y bares</a>
+					<a>{{__('menu.rest_y_bares')}}</a>
 				</li>
 				<li>
-					<a>galeria</a>
+					<a>{{__('menu.galeria')}}</a>
 				</li>
 				<li>
-					<a>entretenimiento</a>
+					<a>{{__('menu.entretenimiento')}}</a>
 				</li>
 				<li>
-					<a>servicios</a>
+					<a>{{__('menu.servicios')}}</a>
 				</li>
-				<li>
+				<li class="hidden-md hidden-lg">
 					<a>llamar</a>
 				</li>
-				<li>
+				<li class="hidden-md hidden-lg">
 					<a>contacto</a>
 				</li>
 			</ul>
-			<ul class="col-xs-12 col-md-2 visible-md visible-lg">
+			<ul class="col-xs-12 col-md-2 visible-md visible-lg lang_d">
 				<li>
-					<a class="icon icon-phone"></a>
+					<a><i class="icon icon-phone"></i></a>
 				</li>
 				<li>
-					<a class="icon icon-envelope"></a>
+					<a><i class="icon icon-envelope"></i></a>
 				</li>
-				<li>
-					<a class="icon icon-lenguaje"></a>
+				<li class="language has_submenu">
+					<a><i class="icon icon-lenguaje"></i></a>
+					<ul class="submenu">
+						@foreach($redirectLang as $l => $url)
+							<li {{(App::getLocale() === $l) ? "class=active" : ''}} ><a href={{$url}}>{{$l}}</a></li>
+						@endforeach
+					</ul>
 				</li>
 			</ul>
 			<ul class="col-xs-12 hidden-md hidden-lg lang_m">
-				<li class="active">
-					<a>esp</a>
-				</li>
-				<li>
-					<a>eng</a>
-				</li>
+				@foreach($redirectLang as $l => $url)
+					<li {{(App::getLocale() === $l) ? "class=active" : ''}} ><a href={{$url}}>{{$l}}</a></li>
+				@endforeach
 			</ul>
 		</ul>
 	</nav>
+	<div class="gradient gradient-menu"></div>
 </header>

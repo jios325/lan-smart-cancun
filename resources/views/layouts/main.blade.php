@@ -3,13 +3,14 @@
 	<head>
 		@include('layouts.styles')
 	</head>
-	<body class="goc">
+	<body class="{{$hotel->uri}}">
 		@include('layouts.menu')
 		<div>
-			@section('content')
-				@include('layouts.newsletter')
-			@show
+			@section('content') @show
+			@include('layouts.redes_sociales')
+			@include('layouts.newsletter')
 		</div>
+		@include('layouts.footer')
 		@include('layouts.scripts')
 	</body>
 </html>

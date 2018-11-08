@@ -87,20 +87,22 @@ small
 		&.slick-active button
 			background: #fff
 	&.dark
-		bottom -25px
+		bottom -40px
 		width 100%
 		text-align center
 		&.dark__bottom
 			bottom: 0px
-		+from-width(5)
-			display none !important
 		li 
 			button
-				width 7px
-				height 7px
-				background: rgba(#F3F3F3,1)
-				margin 3px 10px
+				width 9px
+				height 9px
+				background: rgba($gray-32,.47)
+				margin 3px 5px
+				+from-width(5)
+					width 13px
+					height 13px
+					margin 3px 10px
 			&.slick-active button
-				background: #959595
+				background: $gray-32
 .lh0
 	line-height 0
