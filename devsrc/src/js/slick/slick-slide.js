@@ -8,7 +8,7 @@ $(document).ready(function () {
       dots: true,
       focusOnSelect: true,
       adaptiveHeight: true,
-      dotsClass: 'custom-dots dark'
+      dotsClass: 'custom-dots dark' 
     })
   });
 });

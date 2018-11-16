@@ -21,4 +21,9 @@ $(document).ready(function () {
 			$(this).find('a').toggleClass('open');
 		});
 	});
+	if($('nav').hasClass('intern__nav')){
+		$('nav').children('.principal').find('.logo_field').find('a').find('img').hide()
+		$('nav').children('.principal').find('.logo_field').find('a').find('i').show()
+	}
+			
 })

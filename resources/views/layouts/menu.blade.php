@@ -1,5 +1,5 @@
 <header>
-	<nav>
+	<nav class="{{isset($classMenu) ? $classMenu : ''}}">
 		<ul class="mobile_bar hidden-md hidden-lg">
 			<li class="button_open">
 				<a class="icon icon-menu"></a>
@@ -23,23 +23,29 @@
 				</li>
 			</ul>
 			<ul class="col-xs-12 col-md-8">
-				<li class="active">
-					<a>{{__('menu.inicio')}}</a>
+				<li {{ (preg_match( "/(Home)/", Route::currentRouteName())) ?
+                'class=active' : '' }}>
+					<a href="{{route( 'Home' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.inicio')}}</a>
 				</li>
-				<li>
-					<a>{{__('menu.habitaciones')}}</a>
+				<li {{ (preg_match( "/(HotelRooms)/", Route::currentRouteName())) ?
+                'class=active' : '' }}>
+					<a href="{{route( 'HotelRooms' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.habitaciones')}}</a>
 				</li>
-				<li>
-					<a>{{__('menu.rest_y_bares')}}</a>
+				<li {{ (preg_match( "/(HotelRestaurantsAndBars)/", Route::currentRouteName())) ?
+                'class=active' : '' }}>
+					<a href="{{route( 'HotelRestaurantsAndBars' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.rest_y_bares')}}</a>
 				</li>
-				<li>
-					<a>{{__('menu.galeria')}}</a>
+				<li {{ (preg_match( "/(HotelGallery)/", Route::currentRouteName())) ?
+                'class=active' : '' }}>
+					<a href="{{route( 'HotelGallery' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.galeria')}}</a>
 				</li>
-				<li>
-					<a>{{__('menu.entretenimiento')}}</a>
+				<li {{ (preg_match( "/(HotelEntertainment)/", Route::currentRouteName())) ?
+                'class=active' : '' }}>
+					<a href="{{route( 'HotelEntertainment' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.entretenimiento')}}</a>
 				</li>
-				<li>
-					<a>{{__('menu.servicios')}}</a>
+				<li {{ (preg_match( "/(HotelServicios)/", Route::currentRouteName())) ?
+                'class=active' : '' }}>
+					<a href="{{route( 'HotelServicios' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.servicios')}}</a>
 				</li>
 				<li class="hidden-md hidden-lg">
 					<a>llamar</a>

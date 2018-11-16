@@ -1,0 +1,85 @@
+.main-section
+	&__rooms
+		background white
+		&--room
+			position relative
+			.room--image
+				position relative
+				.slide_arrows
+					z-index 1
+					+from-width(5)
+						max-height 580px
+						.slick-slide
+							max-height: 580px;
+							height: 100%;
+							width: 100%;
+							object-fit: cover;
+							display: block;
+							flex-shrink: 0;		
+			.room--description
+				background url('../img/habitaciones/bkgr-habitaciones.jpg') center no-repeat
+				padding 15px 0
+				display flex
+				flex-wrap wrap
+				justify-content center
+				align-items center
+				+from-width(5)
+					padding 45px 0
+				h2
+					text-align center
+					text-transform uppercase
+					color white
+					font-size 20px
+					line-height 25px
+					letter-spacing 1px
+					position absolute
+					top 20px
+					width 100%
+					font-weight 400
+					+from-width(5)
+						position relative
+						top 0
+						letter-spacing 5.5px
+				p
+					color $gray-32
+					text-align justify
+					font-size 14px
+					line-height 20px
+					width 90%
+					margin 0 auto
+					padding 20px 0
+					+from-width(4)
+						width 80%
+					+from-width(5)
+						text-align center
+						width 50%
+						flex-basis 50%
+						padding 40px 0 35px 0
+				.room--description--buttons
+					text-align center
+					order -1
+					+from-width(5)
+						order 0
+						flex-basis 60%
+						max-width 60%
+						display flex
+						justify-content flex-end
+					a
+						font-size 10px
+						+from-width(5)
+							margin 0 10px
+							min-width 150px
+							font-size 14px
+					
+				.room--description--reserva
+					+from-width(5)
+						flex-basis 30%
+						max-width 30%
+					a
+						+from-width(5)
+							margin-left 10px
+			
+						
+						
+				
+		

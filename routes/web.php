@@ -20,33 +20,37 @@ Route::middleware(['checkIp', 'setLocals', 'marketValues','redirectNonWww'])
 Route::prefix('es')
 	->middleware(['checkIp', 'setLocals', 'marketValues','redirectNonWww'])
 	->group(function () {
-   		Route::get('/', 'Home\HomeController@index')
+        Route::get('/', 'Home\HomeController@index')
+            ->name('RedirectHomeEs');
+   		Route::get('/{slug}', 'Home\HomeController@home')
         	->name('HomeEs');
-        Route::get('/habitaciones', 'Hoteles\RoomsController@index')
+        Route::get('/{slug}/habitaciones', 'Hoteles\RoomsController@index')
             ->name('HotelRoomsEs');
-        Route::get('/restaurantes_y_bares', 'Hoteles\RestaurantsController@getRestaurantsAndBarsByHotel')
+        Route::get('/{slug}/restaurantes_y_bares', 'Hoteles\RestaurantsController@index')
             ->name('HotelRestaurantsAndBarsEs');
-        Route::get('/entretenimiento', 'Hoteles\EntretenimientoController@getHotelEntertainment')
+        Route::get('/{slug}/entretenimiento', 'Hoteles\EntretenimientoController@index')
             ->name('HotelEntertainmentEs');
-        Route::get('/galeria', 'Hoteles\GaleriaController@getHotelGallery')
+        Route::get('/{slug}/galeria', 'Hoteles\GaleriaController@index')
             ->name('HotelGalleryEs');
-        Route::get('/servicios', 'Hoteles\ServiciosController@getHotelServicios')
+        Route::get('/{slug}/servicios', 'Hoteles\ServiciosController@index')
             ->name('HotelServiciosEs');
     });
 
 Route::prefix('en')
 	->middleware(['checkIp', 'setLocals', 'marketValues','redirectNonWww'])
 	->group(function () {
-    	Route::get('/', 'Home\HomeController@index')
+        Route::get('/', 'Home\HomeController@index')
+            ->name('RedirectHomeEn');
+    	Route::get('/{slug}', 'Home\HomeController@home')
         	->name('HomeEn');
-        Route::get('/rooms', 'Hoteles\RoomController@index')
+        Route::get('/{slug}/rooms', 'Hoteles\RoomsController@index')
             ->name('HotelRoomsEn');
-        Route::get('/restaurants_and_bars', 'Hoteles\RestaurantsController@getRestaurantsAndBarsByHotel')
+        Route::get('/{slug}/restaurants_and_bars', 'Hoteles\RestaurantsController@index')
             ->name('HotelRestaurantsAndBarsEn');
-        Route::get('/entertainment', 'Hoteles\EntretenimientoController@getHotelEntertainment')
+        Route::get('/{slug}/entertainment', 'Hoteles\EntretenimientoController@index')
             ->name('HotelEntertainmentEn');
-        Route::get('/gallery', 'Hoteles\GaleriaController@getHotelGallery')
+        Route::get('/{slug}/gallery', 'Hoteles\GaleriaController@index')
             ->name('HotelGalleryEn');
-        Route::get('/services', 'Hoteles\ServiciosController@getHotelServicios')
+        Route::get('/{slug}/services', 'Hoteles\ServiciosController@index')
             ->name('HotelServiciosEn');
     });

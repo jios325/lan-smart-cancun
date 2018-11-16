@@ -23,8 +23,8 @@
 			height 100%
 			+from-width(6)
 				width 350px
-			&.booking__fixed
-				width 235px
+			// &.booking__fixed
+				// width 235px
 				
 			.booking-container	
 				
@@ -36,6 +36,28 @@
 				background-repeat no-repeat !important
 				background-size cover !important
 				min-height 100%
+	&__intern
+		position fixed
+		z-index $zi-booking
+		bottom inherit
+		top 60px
+		width 235px
+		left inherit
+		right 0
+		transition: 0.5s all ease
+		+from-width(5)
+			top 100px
+			right 50px
+			.booking-container
+				display none
+			.booking-button
+				display block
+		.btn-reserva-booking
+			height 45px
+			line-height 45px
+			font-size 14px
+			padding-bottom 20px
+		
 			
 	&__fixed
 		position fixed
@@ -44,6 +66,8 @@
 		left inherit
 		width auto
 		height auto
+		right 50px
+		width 235px
 		.booking-container
 			display none
 		.booking-button

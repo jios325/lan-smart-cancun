@@ -1,21 +1,22 @@
 $(document).ready(function () {
 	$(window).scroll(function (e) {
 		// Scroll Menu!!--------------------------------------------------------------
-		var heightCont = $('nav').height()
-		if ($(this).scrollTop() >= 40) {
-			console.log('sticky')
-			$('nav').addClass('fixed_nav')
-			$('nav').children('.principal').find('.logo_field').find('a').find('img').hide()
-			$('nav').children('.principal').find('.logo_field').find('a').find('i').show()
-			
+		if(!$('nav').hasClass('intern__nav')){ //solo en home
+			var heightCont = $('nav').height()
+			if ($(this).scrollTop() >= 40) {
+				console.log('sticky')
+				$('nav').addClass('fixed_nav')
+				$('nav').children('.principal').find('.logo_field').find('a').find('img').hide()
+				$('nav').children('.principal').find('.logo_field').find('a').find('i').show()
+				
+			}
+			else{
+				console.log("nosticky")
+				$('nav').removeClass('fixed_nav')
+				$('nav').children('.principal').find('.logo_field').find('a').find('img').show()
+				$('nav').children('.principal').find('.logo_field').find('a').find('i').hide()
+			}
 		}
-		else{
-			console.log("nosticky")
-			$('nav').removeClass('fixed_nav')
-			$('nav').children('.principal').find('.logo_field').find('a').find('img').show()
-			$('nav').children('.principal').find('.logo_field').find('a').find('i').hide()
-		}
-
 		// Booking de HOME!!--------------------------------------------------------------
 		//checa si existe booking
 		if ($('.booking').height()) {
@@ -45,47 +46,23 @@ $(document).ready(function () {
 				//---//
 
 				// animacion para cambios de tamaño y sticky de booking ----------------------------------
-        if ($(this).scrollTop() >= totalHeight) { // medida desde caja hasta top en home//hace sticky
-          if ($(window).width() >= 1024) { // solo desktop
-            $('.booking').addClass('booking__fixed')
-          } 
-          else {
-            $('.booking').addClass('booking__fixed--mobile')
-          }
-        } 
-        else if ($(this).scrollTop() <= totalHeight) {
-          if ($(window).width() >= 1024) { // solo desktop
-            $('.booking').removeClass('booking__fixed')
-          } 
-          else {
-            $('.booking').removeClass('booking__fixed--mobile')
-          }
-        }
+		        if ($(this).scrollTop() >= totalHeight) { // medida desde caja hasta top en home//hace sticky
+		          if ($(window).width() >= 1024) { // solo desktop
+		            $('.booking').addClass('booking__fixed')
+		          } 
+		          else {
+		            $('.booking').addClass('booking__fixed--mobile')
+		          }
+		        } 
+		        else if ($(this).scrollTop() <= totalHeight) {
+		          if ($(window).width() >= 1024) { // solo desktop
+		            $('.booking').removeClass('booking__fixed')
+		          } 
+		          else {
+		            $('.booking').removeClass('booking__fixed--mobile')
+		          }
+		        }
 			}
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		}
   })
 

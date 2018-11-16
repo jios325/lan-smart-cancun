@@ -18,14 +18,7 @@
 					padding-left 9px
 			&-container
 				position relative
-				&:after
-					content ''
-					background rgba(gray, 0.45)
-					width 100%
-					height 100%
-					position absolute
-					left 0
-					top 0
+				
 			&-content
 				position relative
 				display flex
@@ -42,6 +35,8 @@
 					padding 60px 0 40px
 					margin 0 
 				h3
+				h2
+				span
 					text-transform uppercase
 					font-size 18px
 					letter-spacing 3.5px
@@ -62,11 +57,83 @@
 					height 32px
 					&:hover
 						background white
-						
+			&.small
+				cursor pointer
+				position relative
+				flex-basis 50%
+				max-width 50%
+				.tabs-image--item-container
+					filter gray
+					filter grayscale(1)
+					&:after
+						// background rgba($gocHov, 0.45)
+						background radial-gradient(circle at 50% 0, rgba(255,255,255,0.5) 0%, rgba(0,0,0,0.5) 100%)
+					&:first-child
+						margin-right 5px
+						+from-width(5)
+							margin 0 
+					&:last-child
+						margin-left 5px
+						+from-width(5)
+							margin 0
+				.tabs-image--item-content	
+					padding 5px 0
+					margin 0
+					transition: 0.5s all ease
+					+from-width(4)
+						padding 20px 0 0px
+					span
+						font-size 12px
+						letter-spacing 1px
+						+from-width(4)
+							padding 20px 0 0px
+							font-size 18px
+							letter-spacing 3.5px
+					.tabs-icon
+						padding 5px 0
+						order -1
+						+from-width(4)
+							padding 20px 0
+							order 0
+						img
+							max-width 30px
+							+from-width(4)
+								max-width 100%
+				.gradient-card-shadow
+					display none
+					transition: 0.5s all ease
+				&.active
+					+from-width(4)
+						.gradient-card-shadow
+							display block
+
+				&.tab-1.active ~ .tabs--slide .tabs--slide-content.tab-1
+				&.tab-2.active ~ .tabs--slide .tabs--slide-content.tab-2
+					z-index 100
+					opacity 1
+					transition opacity ease-out 0.2s 0.1s
 			&.restaurantes
 				.tabs-image--item-container
 					background url('../img/rest_y_bares/restaurante.jpg') center no-repeat
+				&.small
+					.tabs-image--item-container
+						background url('../img/rest_y_bares/restaurante-tab.jpg') center no-repeat
 			&.bares
 				.tabs-image--item-container
 					background url('../img/rest_y_bares/bar.jpg') center no-repeat		
-			
+				&.small
+					.tabs-image--item-container
+						background url('../img/rest_y_bares/bar-tab.jpg') center no-repeat
+	&--slide
+		position relative
+		z-index 5
+		width 100%
+		&-content
+			position absolute
+			top 0
+			left 0
+			z-index 1
+			opacity 0
+			width 100%
+			transition opacity linear .1s
+		

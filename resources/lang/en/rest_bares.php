@@ -5,6 +5,7 @@ return [
     'restaurante'  =>  'restaurant',
     'bares'         =>  'bars',
     'bares_exc' => 'exclusive bars',
+    'rest_exc' => 'exclusive restaurants',
     'centros_consumo'   =>  'Food And Beverages',
     'reconocimientos'   => 'achievements',
     'centros_consumo_exclusivo'   =>  'exclusive',
@@ -15,5 +16,6 @@ return [
     'reserva_24' => 'Book 24 hours in advance',
     'no_niños' => 'No children allowed',
     'ver_restaurantes' => 'view restaurants',
-    'ver_bares' => 'view bars'
+    'ver_bares' => 'view bars',
+    'costo_adicional' => 'Additional Cost'
 ];

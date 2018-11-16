@@ -104,3 +104,6 @@
 .icon-pause:before {
   content: "\e015";
 }
+.icon-search-plus:before {
+  content: "\e016";
+}

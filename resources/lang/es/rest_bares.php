@@ -5,6 +5,7 @@ return [
     'restaurante'  =>  'restaurante',
     'bares'         =>  'bares',
     'bares_exc' => 'bares exclusivos',
+    'rest_exc' => 'restaurantes exclusivos',
     'centros_consumo'   =>  'Alimentos y Bebidas',
     'reconocimientos'   => 'reconocimientos',
     'centros_consumo_exclusivo'   =>  'exclusivo',
@@ -15,5 +16,6 @@ return [
     'reserva_24' => 'Reservar con 24 horas de anticipación',
     'no_niños' => 'No se admiten niños',
     'ver_restaurantes' => 'Ver restaurantes',
-    'ver_bares' => 'Ver bares'
+    'ver_bares' => 'Ver bares',
+    'costo_adicional' => 'Costo Adicional'
 ];

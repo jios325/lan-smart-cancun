@@ -7,6 +7,16 @@ header
 		line-height: 0px
 		position fixed
 		width 100%
+		ul
+			li
+				a
+					height: 100%;
+					width: 100%;
+					-o-object-fit: cover;
+					object-fit: cover;
+					display: block;
+					-ms-flex-negative: 0;
+					flex-shrink: 0;
 		> ul
 			> li
 				cursor pointer
@@ -149,6 +159,7 @@ header
 							background rgba($gray-32, .5)
 							overflow visible
 							position relative
+							display inline
 							> .icon
 								&:before
 									line-height 30px
@@ -194,6 +205,7 @@ header
 				&.opened
 					top 0
 					visibility visible	
+		&.intern__nav
 		&.fixed_nav
 			>ul
 				&.mobile_bar

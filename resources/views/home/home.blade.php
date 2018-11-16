@@ -1,6 +1,5 @@
 @extends('layouts.main')
 @section('content')
-
 	<div class="main-section main-section__home">
 		<div class="main-section__home-head_home backgrounds" style="background-image: url({{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/' . $hotel->bgheader}})">
 			<div class="gradient-home"></div>
@@ -124,7 +123,7 @@
 			<div class="main-section__home-rest_y_bares--container">
 				<div class="tabs-image--container">
 					<div class="tabs-image--item restaurantes">
-						<div class="tabs-image--item-container backgrounds">
+						<div class="tabs-image--item-container backgrounds gradient-after">
 							<div class="tabs-image--item-content">
 								<h3>
 									{{__('rest_bares.restaurantes')}}
@@ -133,13 +132,13 @@
 									<img src="{{asset('img/icons/icon-restaurantes.png')}}" alt="">
 								</div>
 								
-								<a class="btn btn-transparent btn-transparent-flat">{{__	('rest_bares.ver_restaurantes')}}</a>
+								<a class="btn btn-transparent-white btn-transparent-flat">{{__	('rest_bares.ver_restaurantes')}}</a>
 
 							</div>
 						</div>
 					</div>
 					<div class="tabs-image--item bares">
-						<div class="tabs-image--item-container backgrounds">
+						<div class="tabs-image--item-container backgrounds gradient-after">
 							<div class="tabs-image--item-content">
 								<h3>
 									{{__('rest_bares.bares')}}
@@ -148,7 +147,7 @@
 									<img src="{{asset('img/icons/icon-bares.png')}}" alt="">
 								</div>
 								
-								<a class="btn btn-transparent btn-transparent-flat">{{__	('rest_bares.ver_bares')}}</a>
+								<a class="btn btn-transparent-white btn-transparent-flat">{{__	('rest_bares.ver_bares')}}</a>
 							</div>
 						</div>
 					</div>
@@ -164,7 +163,7 @@
 						<div class="youtube-player" data-id="{{ last(explode('/', $hotel->video)) }}" data-thumbnail="{{($hotel->uri == 'oasis-palm') ? 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/img/hoteles/oasis-palm/header/op_vid.jpg' : 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/' . $hotel->bgheader}}"></div>
 					</div>
 					<div class="grid-gallery--item">
-						<div class="grid-gallery--item-images--container popup-gallery--mobile slide_mobile">
+						<div class="grid-gallery--item-images--container popup-gallery--mobile slide_mobile dots">
 							@foreach($galeria_destacados as $galeria)
 								<div class="grid-gallery--item-images--item">
 									<a href="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $galeria->url}}" alt="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}" rel="noopener noreferrer nofollow">
