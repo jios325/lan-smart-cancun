@@ -22,7 +22,7 @@ Route::prefix('es')
 	->group(function () {
         Route::get('/', 'Home\HomeController@index')
             ->name('RedirectHomeEs');
-   		Route::get('/{slug}', 'Home\HomeController@home')
+   		Route::get('/{slug}', 'Home\HomeController@index')
         	->name('HomeEs');
         Route::get('/{slug}/habitaciones', 'Hoteles\RoomsController@index')
             ->name('HotelRoomsEs');
@@ -41,7 +41,7 @@ Route::prefix('en')
 	->group(function () {
         Route::get('/', 'Home\HomeController@index')
             ->name('RedirectHomeEn');
-    	Route::get('/{slug}', 'Home\HomeController@home')
+    	Route::get('/{slug}', 'Home\HomeController@index')
         	->name('HomeEn');
         Route::get('/{slug}/rooms', 'Hoteles\RoomsController@index')
             ->name('HotelRoomsEn');

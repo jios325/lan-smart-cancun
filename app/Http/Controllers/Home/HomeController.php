@@ -20,11 +20,19 @@ class HomeController extends Controller
         $this->lang = Request::segment(1);
         App::setLocale($this->lang);
     }
-    public function index(Http $request){
-        // return redirect()->action('Home\HomeController@home', ['slug' => 'grand-oasis-cancun']);
-        return $this->home($request, ['slug' => 'grand-oasis-cancun']);
-    }
-    public function home(Http $request, $slug){   
+    // public function index(Http $request){
+    //     return redirect()->action('Home\HomeController@home', ['slug' => 'grand-oasis-cancun']);
+    //     // return $this->home($request, ['slug' => 'grand-oasis-cancun']);
+    // }
+    public function index(Http $request, $s = null){   
+
+        //si es null asigna default goc, si no, manda el hotel necesario
+        if($s == null){
+            $slug = 'grand-oasis-cancun';
+        }
+        else{
+            $slug = $s;
+        }
 
         $hotel = DB::table('hotel')
             ->leftJoin('redes_sociales', 'hotel.redes_sociales_id', '=', 'redes_sociales.id')
