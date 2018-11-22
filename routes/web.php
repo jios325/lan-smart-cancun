@@ -14,11 +14,11 @@
 // Route::get('redirect/{lang}/{route}', 'Home\HomeController@changeLang')
 //     ->where('lang', 'es|en');
 
-Route::middleware(['checkIp', 'setLocals', 'marketValues','redirectNonWww'])
+Route::middleware(['checkIp', 'setLocals', 'marketValues'])
     ->get('/', 'Home\HomeController@index');
     
 Route::prefix('es')
-	->middleware(['checkIp', 'setLocals', 'marketValues','redirectNonWww'])
+	->middleware(['checkIp', 'setLocals', 'marketValues'])
 	->group(function () {
         Route::get('/', 'Home\HomeController@index')
             ->name('RedirectHomeEs');
@@ -37,7 +37,7 @@ Route::prefix('es')
     });
 
 Route::prefix('en')
-	->middleware(['checkIp', 'setLocals', 'marketValues','redirectNonWww'])
+	->middleware(['checkIp', 'setLocals', 'marketValues'])
 	->group(function () {
         Route::get('/', 'Home\HomeController@index')
             ->name('RedirectHomeEn');
