@@ -19,7 +19,7 @@ class RedirectNonWww
         $segments = join('/', $request->segments());
 
         if (env('APP_URL') !== $request->root()) {
-            return redirect('https://oasishoteles.com/' . $segments);
+            return redirect('http://grandoasiscancunhotel.com/' . $segments);
         }
 
         return $next($request);
