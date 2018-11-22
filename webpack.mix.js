@@ -52,11 +52,8 @@ mix.stylus('devsrc/src/styles/estilos.styl', 'public/css', {
     ]
   }).version()
 // versiona todos los bundles que existen e la carpeta dist, se agregaron los que tienen mas cambios constantemente.
-// mix.copy(['devsrc/dist/js/app.bundle.js',
-//   // 'devsrc/dist/js/booking.bundle.js',
-//   // 'devsrc/dist/js/bookingPaqueteUsa.bundle.js',
-//   // 'devsrc/dist/js/bookingUsa.bundle.js',
-//   'devsrc/dist/js/common.bundle.js',
-//   // 'devsrc/dist/js/payment.bundle.js'
-//   ], 'public/js')
-// .version()
+mix.copy([
+  'devsrc/dist/js/app.bundle.js',
+  'devsrc/dist/js/common.bundle.js',
+], 'public/js')
+.version()
