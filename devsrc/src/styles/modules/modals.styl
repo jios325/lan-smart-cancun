@@ -17,13 +17,48 @@
 		background url('../img/modals/bkgr1.png')
 		color white
 		&-container
-			padding 40px
+			padding 1rem
 			position relative
 			z-index 1
 			+from-width(4)
+				padding 40px
 				max-width 80%
 				margin 0 auto
 				text-align center
+			&.full
+				+from-width(4)
+					max-width 100%
+		&-content
+			display flex
+			flex-flow row
+			flex-wrap wrap
+			justify-content center
+			align-items center
+			&--image
+				flex-basis 100%
+				max-width 100%
+				+from-width(4)
+					flex-basis 58.33333333%
+					max-width 58.33333333%
+			&--info
+				flex-basis 100%
+				max-width 100%
+				padding 0 20px
+				text-align center
+				padding-top 20px
+				+from-width(4)
+					flex-basis 41.66666667%
+					max-width 41.66666667%
+					padding-top 0
+				img
+					max-height 80px
+				&--descr
+					max-width 95%
+					margin 0 auto
+					padding-top 20px
+					p
+						color white
+		
 		.mfp-close
 			color white
 			width: 80%;

@@ -101,6 +101,8 @@
 								flex-shrink: 0;
 								+from-width(5)
 									position: absolute;
+									top 0
+									left 0
 		&--cards
 			display flex
 			flex-flow row
@@ -116,42 +118,15 @@
 				+from-width(5)
 					min-height 320px
 					max-height 320px
-				.card--item-over-container
-					max-height 230px
-					min-height 230px
-					+from-width(5)
-						max-height 320px
-						min-height 320px
-				+from-width(5)
 					flex-basis 25%
 					max-width 25%
 					position: relative;
 					overflow: hidden;
-		// &--cards
-		// 	display flex
-		// 	flex-flow row
-		// 	flex-wrap wrap
-		// 	justify-content center
-		// 	align-items center
-		// 	overflow hidden
-		// 	// margin-bottom 70px
-		// 	&--item
-		// 		flex-basis 90%
-		// 		max-width 90%
-		// 		min-height: 320px;
-		// 		position: relative;
-		// 		overflow: hidden;
-		// 		+from-width(5)
-		// 			flex-basis 25%
-		// 			max-width 25%
-		&--descr
-			width 90%
-			margin 0 auto
-			padding 20px 0
-			text-align justify
-			+from-width(5)
-				width 60%
-				padding 16px 0 50px
-				text-align center
+				// .card--item-over-container
+				// 	max-height 230px
+				// 	min-height 230px
+				// 	+from-width(5)
+				// 		max-height 320px
+				// 		min-height 320px
 		&--button
 			padding-top 70px

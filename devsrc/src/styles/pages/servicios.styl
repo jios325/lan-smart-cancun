@@ -1,0 +1,107 @@
+.main-section
+	&__servicios
+		&--spa
+			&--container
+				background url('../img/habitaciones/bkgr-habitaciones.jpg') center no-repeat
+				padding 30px 0
+			&--content
+				+from-width(5)
+					display flex
+					flex-flow row
+					flex-wrap wrap
+					justify-content center
+					align-items center
+					text-align center
+			&--item
+				+from-width(5)
+					flex-basis 50%
+					max-width 50%
+					&:first-child
+						padding-right 9px
+					&:last-child
+						padding-left 9px
+		&--tours
+			.card--leftright-text--item
+				+from-width(5)
+					padding 15px 0
+		&--renta-autos
+			.card--imageabsolute--item
+				display flex
+				flex-flow row
+				flex-wrap wrap
+				justify-content center
+				flex-basis 100%
+				max-width 100%
+				position relative
+				+from-width(5)
+					max-height 330px
+					
+				&__image
+					flex-basis 100%
+					max-width 100%
+					text-align center
+					transform translateY(10%)
+					z-index 1
+					+from-width(5)
+						flex-basis 25%
+						max-width 25%
+						transform none
+					img
+						+from-width(5)
+							position absolute
+							top 50%
+							left 0
+							transform translateY(-50%)
+							max-width 400px
+						+from-width(6)
+							max-width 500px
+				&__info
+					flex-basis 100%
+					max-width 100%
+					background $lemon
+					padding 100px 0 50px
+					color white
+					display flex
+					flex-flow row
+					flex-wrap wrap
+					justify-content center
+					align-items center
+					text-align center
+					transform translateY(-10%)
+					+from-width(5)
+						flex-basis 75%
+						max-width 75%
+						text-align end
+						padding 30px 20px 30px 0
+						transform none
+					+from-width(6)
+						padding 50px 50px 50px 0
+					&--container
+						+from-width(5)
+							text-align: left;
+							width: 75%;
+							margin: 0 0 0 auto;
+						+from-width(6)
+							width 70%
+					h3
+						font-size 30px
+						line-height 35px
+						letter-spacing 2.8px
+						font-weight 700
+						+from-width(5)
+							font-size 40px
+							line-height 47px
+							letter-spacing 3.5px
+					p
+						max-width 90%
+						color white
+						font-size 16px
+						line-height 19px
+						padding-top 20px
+						margin 0 auto
+						+from-width(5)
+							max-width 100%
+							font-size 14px
+						+from-width(6)
+							font-size 16px
+				

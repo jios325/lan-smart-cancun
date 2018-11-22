@@ -5,6 +5,17 @@
 		color $gocBkg
 		border 1px solid $gocBkg
 		box-shadow none
+	a.btn-transparent-border
+		color $gocBkg
+		border 1px solid $gocBkg
+	a.more_information
+		color $gocBkg
+		&:after
+			border-bottom 1px solid $gocBkg
+	a.btn.btn-transparent-white.btn-transparent-flat
+		&:hover
+			color $gocBkg
+			background white
 	.gradient-after
 		&:after
 			background rgba($gocHov, 0.45)
@@ -52,10 +63,10 @@
 						color white
 						border 1px solid white
 						box-shadow 0 2px 14px 0 rgba(0,0,0,0.1)
-	.tabs-image--item-content
-		a.btn
-			&:hover
-				color $gocBkg
+	// .tabs-image--item-content
+	// 	a.btn
+	// 		&:hover
+	// 			color $gocBkg
 	.grid-gallery--item-images--item
 		a:hover
 			+from-width(5)
@@ -85,6 +96,9 @@
 		color $black
 		border 1px solid $black
 		box-shadow none
+	a.btn-transparent-border
+		color $black
+		border 1px solid $black
 	.booking
 		.btn-reserva-booking
 			background  $black

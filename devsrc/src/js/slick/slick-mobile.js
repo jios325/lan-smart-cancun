@@ -49,7 +49,10 @@ $(document).ready(function () {
         dotsClass: 'custom-dots dark',
         rows: rows,
         slidesPerRow: slidesPerRow,
-        focusOnSelect: true,
+        focusOnSelect: false,
+        swipeToSlide: false,
+        touchMove: false,
+        swipe: false,
         adaptiveHeight: true,
         mobileFirst: true,
         responsive: [

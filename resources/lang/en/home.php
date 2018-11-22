@@ -1,5 +1,6 @@
 <?php
 
  return [
- 	'ver_mas' => 'view more'
+ 	'ver_mas' => 'view more',
+ 	'mas_info' => 'more information'
  ];

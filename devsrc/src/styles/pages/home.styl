@@ -22,7 +22,17 @@
 			font-size 16px
 		&-habitaciones
 			&--container
-				padding-top 30px
+				// padding-top 30px
+				.card--home--room
+					flex-basis 100%
+					max-width 100%
+					+from-width(5)
+						flex-basis 50%
+						max-width 50%
+						&:first-child
+							padding-right 9px
+						&:last-child
+							padding-left 9px
 		&-galeria
 			.grid-gallery
 				display flex

@@ -15,7 +15,7 @@
 		</div>
 		<div class="divisor"></div>
 		<div class="main-section__home-slick container-fluid wrap-container">
-			<h2 class="title--section no-line">{{$hotel->nombre_en}}</h2>
+			<h2 class="title--section">{{$hotel->nombre_en}}</h2>
 			<div class="row center-xs">
 				<div class="col-xs-11 col-md-10">
 					<div class="slide_slick slick-justify">
@@ -179,7 +179,9 @@
 		</div>
 		<div class="divisor"></div>
 		<div class="main-section__home-ubicacion">
-			<h2 class="title--section">{!! (App::getLocale() == 'es') ? __('hoteles.ubicacion').' '.$hotel->nombre_en : $hotel->nombre_en.' '.__('hoteles.ubicacion') !!}</h2>
+			<div class="container-fluid wrap-container">
+				<h2 class="title--section">{!! (App::getLocale() == 'es') ? __('hoteles.ubicacion').' '.$hotel->nombre_en : $hotel->nombre_en.' '.__('hoteles.ubicacion') !!}</h2>
+			</div>	
 			<div class="main-section__home-ubicacion--container">
 				<div class="map-container">
 					<div class="map-container--item backgrounds">

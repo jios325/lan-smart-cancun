@@ -43,6 +43,14 @@
 			background rgba(255,255,255,0.3)
 		&-flat
 			box-shadow none
+	&-transparent-border
+		btn(white, transparent, white, 1px, false)
+		height 45px
+		line-height 45px
+		&:hover
+			background white
+			border 1px solid white !important
+			box-shadow 0 2px 4px 0 rgba(0,0,0,0.14) !important
 	&-shadow
 		box-shadow 1px 2px 4px 0 rgba(0,0,0,0.32)
 		

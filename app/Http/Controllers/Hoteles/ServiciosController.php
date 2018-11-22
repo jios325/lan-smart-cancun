@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Http\Request as Http;
 
-class GaleriaController extends Controller
+class ServiciosController extends Controller
 {
     protected $lang;
 
@@ -29,12 +29,6 @@ class GaleriaController extends Controller
             ->where('hotel.uri', $slug)
             ->where('hotel.activo', 1)
             ->first();
-        $galeria = DB::table('hotel_galeria')
-            ->leftJoin('hotel_galeria_categoria', 'hotel_galeria_categoria.id_hotel_galeria_categoria', '=', 'hotel_galeria.id_hotel_galeria_categoria')
-            ->where('hotel_galeria.id_hotel', $hotel->id_hotel)
-            ->orderBy('hotel_galeria_categoria.orden', 'ASC')
-            ->get();
-        $agrupado = $galeria->groupBy('nombre_cat_'.App::getLocale())->toArray();
-        return view('hoteles.galeria')->with(['galerias' => $agrupado, 'hotel' => $hotel]);
+        return view('hoteles.servicios')->with(['hotel' => $hotel]);
     }
 }

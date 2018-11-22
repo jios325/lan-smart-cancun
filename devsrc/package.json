@@ -4,9 +4,7 @@
   "description": "Landing para Hoteles",
   "main": "gulpfile.js",
   "scripts": {
-    "build": "export NODE_ENV=production && gulp prod",
-    "dev": "export NODE_ENV=development && gulp",
-    "prod": "export NODE_ENV=production && webpack --colors --progress --config webpack.prod.js && gulp prod",
+    "prod": "export NODE_ENV=production && webpack --colors --progress --config webpack.prod.js",
     "devweb": "concurrently \"export NODE_ENV=development && webpack-dev-server --open --config webpack.dev.js\" \"set NODE_ENV=development\""
   },
   "author": "AreCoca",

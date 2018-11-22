@@ -3,9 +3,10 @@
 	<div class="main-section main-section__rooms ">
 		@include('booking.booking', ['class' => 'booking__intern'])
 		<div class="divisor divisor-intern"></div>
-		<h1 class="title--section">{!! (App::getLocale() == 'es') ? __('menu.habitaciones').' '.$hotel->nombre_en : $hotel->nombre_en.' '.__('menu.habitaciones') !!}</h1>
+		<div class="container-fluid wrap-container">
+			<h1 class="title--section h1">{!! (App::getLocale() == 'es') ? __('menu.habitaciones').' '.$hotel->nombre_en : $hotel->nombre_en.' '.__('menu.habitaciones') !!}</h1>
+		</div>
 		@foreach($habitaciones as $habitacion)
-			<div class="divisor"></div>
 			<div class="main-section__rooms--room {{$habitacion->uri}} container-fluid wrap-container">
 				<div class="room--image">
 					<div class="slide_arrows">
