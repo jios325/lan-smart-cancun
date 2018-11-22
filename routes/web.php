@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('redirect/{lang}/{route}', 'Home\HomeController@changeLang')
-    ->where('lang', 'es|en');
+// Route::get('redirect/{lang}/{route}', 'Home\HomeController@changeLang')
+//     ->where('lang', 'es|en');
 
 Route::middleware(['checkIp', 'setLocals', 'marketValues','redirectNonWww'])
     ->get('/', 'Home\HomeController@index');

@@ -21,7 +21,8 @@ class HomeController extends Controller
         App::setLocale($this->lang);
     }
     public function index(Http $request){
-        return redirect()->action('Home\HomeController@home', ['slug' => 'grand-oasis-cancun']);
+        // return redirect()->action('Home\HomeController@home', ['slug' => 'grand-oasis-cancun']);
+        return $this->home($request, ['slug' => 'grand-oasis-cancun']);
     }
     public function home(Http $request, $slug){   
 
