@@ -53,7 +53,7 @@ for num in 1..10
 			display block
 			&.apellido_pastilla
 				font-family $gotham-light
-				font-weight 100
+				font-weight 300
 				line-height 25px
 	&--section
 		font-size 15px
@@ -63,7 +63,7 @@ for num in 1..10
 		width 100%
 		margin-bottom 15px
 		text-transform uppercase
-		font-weight 300
+		font-weight 400
 		padding 20px 0
 		+from-width(5)
 			font-size 25px
@@ -141,6 +141,12 @@ for num in 1..10
 			z-index 2
 	&-home
 		background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.19) 100%), linear-gradient(180deg, rgba(255,255,255,0.34) 0%, rgba(0,0,0,0.35) 100%);
+		height 100%
+		width 100%
+		position absolute
+		left 0
+		top 0
+		z-index 1
 	&-card-shadow
 		+from-width(4)
 			background: radial-gradient(35% 45% at center, rgb(0, 0, 0) -70%, rgba(255, 255, 255, 0) 155%);
@@ -167,6 +173,26 @@ for num in 1..10
 			left 0
 			top 0
 			z-index 1
+		&-vertical
+			background: radial-gradient(35% 45% at center, #000 0%, rgba(255,255,255,0) 100%);
+			width: 35px;
+			height: 60%;
+			position: absolute;
+			right: -14px;
+			top: 50%;
+			z-index: 1;
+			transform: translateY(-50%);
+			filter: blur(5px);
+		&-inside
+			+from-width(5)
+				background radial-gradient(circle, rgba(0,0,0,0.74) 0%, rgba(255,255,255,0) 100%)
+				height: 30px;
+				width: 40%
+				position: absolute;
+				bottom: -15px;
+				left: 50%;
+				transform: translateX(-50%);
+				filter: blur(15px);
 	&-popup
 		&-dark
 			background linear-gradient(0deg, rgba($gray-32,.9) 100%, rgba($gray-32,.9) 100%)
@@ -221,5 +247,9 @@ for num in 1..10
 		position: absolute;
 		transform: rotate(45deg) translateY(-50%)
 		top: 50%
-		left: -25px
+		left: -15px
 		border-radius 1.5px
+		+from-width(4)
+			left -20px
+		+from-width(5)
+			left: -25px

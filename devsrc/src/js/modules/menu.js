@@ -3,12 +3,14 @@ $(document).ready(function () {
 		/* Act on the event */
 		if(!$('.principal').hasClass('opened')){
 			$('.principal').addClass('opened');
+			$('body').css('overflow', 'hidden')
 		}
 	});
 	$('.button_close').click(function(event) {
 		/* Act on the event */
 		if($('.principal').hasClass('opened')){
 			$('.principal').removeClass('opened');
+			$('body').css('overflow', 'auto')
 		}
 	});
 	$('.has_submenu').each(function(index, el) {

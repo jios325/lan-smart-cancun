@@ -1,0 +1,46 @@
+.grid-gallery
+	display flex
+	flex-flow row
+	flex-wrap wrap
+	align-items center
+	justify-content center
+	text-align center
+	&--item
+		flex-basis 100%
+		max-width 100%
+		+from-width(5)
+			flex-basis 50%
+			max-width 50%
+			&:first-child
+				padding-right 9px
+			&:last-child
+				padding-left 9px
+		&-image
+			position relative
+			overflow hidden
+			img
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				display: block;
+				flex-shrink: 0;	
+			a:hover
+				+from-width(5)
+					&:after
+						content ''
+						background rgba(gray, 0.45)
+						width 100%
+						height 100%
+						position absolute
+						left 0
+						top 0
+					&:before
+						content '\e016'
+						font-family $oasis-font
+						font-size 30px
+						color white
+						position absolute
+						left 50%
+						top 50%
+						transform translate(-50%,-50%)
+						z-index 1		

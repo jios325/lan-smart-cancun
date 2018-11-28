@@ -1,0 +1,107 @@
+.main-section
+	&__galeria
+		&--grid
+			.grid-gallery
+				&--col
+					flex-basis 100%
+					max-width 100%
+					display flex
+					flex-flow row
+					flex-wrap wrap
+					+from-width(5)
+						flex-basis 50%
+						max-width 50%
+					&:first-child
+						+from-width(5)
+							padding-right 9px
+						.grid-gallery--item-image
+							flex-basis 100%
+							max-width 100%
+							height 100%
+					&:last-child
+						+from-width(5)
+							padding-left 9px
+						.grid-gallery--item-image
+							&:nth-child(odd)
+								padding-right 9px
+								a:hover
+									&:after
+										margin-right: 9px;
+										width: calc(100% - 9px);
+										left: 0;
+							&:nth-child(even)
+								padding-left 9px
+								a:hover
+									&:after
+										margin-left: 9px;
+										width: calc(100% - 9px);
+										left: inherit;
+										right: 0;
+					
+					.grid-gallery--item-image
+						// min-height 250px
+						height 50%
+						padding-top 18px
+						flex-basis 50%
+						max-width 50%
+						a:hover
+							&:after
+								margin-top 18px
+								height calc(100% - 18px)
+								top inherit
+								bottom 0
+						
+				&--row
+					overflow hidden
+					display flex
+					flex-flow row
+					flex-wrap wrap
+					&:nth-child(1)
+					&:nth-child(3)
+						min-height 600px
+						height 100%
+						+from-width(5)
+							min-height 450px
+							max-height 450px
+						+from-width(6)
+							height 550px
+							max-height inherit
+					&:nth-child(1)
+					&:nth-child(2)
+						.grid-gallery--col
+							&:last-child
+								.grid-gallery--item-image
+									+from-width(5)
+										flex-basis 50%
+										max-width 50%
+										height 50%
+					&:nth-child(2)
+						min-height 450px
+						height 100%
+						+from-width(5)
+							min-height 225px
+							max-height 225px
+						+from-width(6)
+							height 275px
+							max-height inherit
+						.grid-gallery--col
+							&:last-child
+								.grid-gallery--item-image
+									height 100%
+					&:nth-child(3)
+						.grid-gallery--col
+							+from-width(5)
+								&:first-child
+									padding-left 9px
+									padding-right 0
+								&:last-child
+									order -1
+									padding-left 0
+									padding-right 9px
+									.grid-gallery--item-image
+										flex-basis 50%
+										max-width 50%
+										height 50%
+				
+										
+						

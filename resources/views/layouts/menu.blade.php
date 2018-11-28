@@ -1,4 +1,4 @@
-<header>
+<header id="">
 	<nav class="{{isset($classMenu) ? $classMenu : ''}}">
 		<ul class="mobile_bar hidden-md hidden-lg">
 			<li class="button_open">
@@ -10,7 +10,7 @@
 				</a>
 			</li>
 		</ul>
-		<ul class="principal">
+		<ul class="principal" id="menu-hotel">
 			<ul class="col-xs-12 col-md-2">
 				<li class="visible-md visible-lg logo_field">
 					<a>

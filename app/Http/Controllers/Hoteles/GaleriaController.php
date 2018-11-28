@@ -32,9 +32,15 @@ class GaleriaController extends Controller
         $galeria = DB::table('hotel_galeria')
             ->leftJoin('hotel_galeria_categoria', 'hotel_galeria_categoria.id_hotel_galeria_categoria', '=', 'hotel_galeria.id_hotel_galeria_categoria')
             ->where('hotel_galeria.id_hotel', $hotel->id_hotel)
-            ->orderBy('hotel_galeria_categoria.orden', 'ASC')
+            ->inRandomOrder()
+            ->limit(13)
             ->get();
-        $agrupado = $galeria->groupBy('nombre_cat_'.App::getLocale())->toArray();
-        return view('hoteles.galeria')->with(['galerias' => $agrupado, 'hotel' => $hotel]);
+        $agrupado = array(
+            $galeria->splice(0,5),
+            $galeria->splice(0,3),
+            $galeria->splice(0,5)
+        );
+        // $agrupado = $galeria->groupBy('nombre_cat_'.App::getLocale())->toArray();
+        return view('hoteles.galeria')->with(['galeria' => $agrupado, 'hotel' => $hotel]);
     }
 }

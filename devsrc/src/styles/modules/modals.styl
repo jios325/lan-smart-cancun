@@ -28,6 +28,12 @@
 			&.full
 				+from-width(4)
 					max-width 100%
+			&.no-close
+				.mfp-close
+					width 100%
+					font-size 40px
+					&:after
+						content ''
 		&-content
 			display flex
 			flex-flow row
@@ -74,6 +80,8 @@
 				font-size 30px
 				color white
 				line-height 44px
+			&.w100
+				width 100%
 			
 .list_items
 	display inline-block
@@ -86,15 +94,16 @@
 			font-size 16px
 			line-height 18px
 			position relative
-			margin-left 10px
+			margin-left 20px
 			letter-spacing 1px
 			+from-width(4)
 				font-size 14px
 				line-height 16px
+				margin-left 10px
 		
 		&.icon
 			li
-				margin-left 70px
+				margin-left 20px
 				line-height 22px
 				+from-width(4)
 					margin-left 10px
@@ -136,3 +145,26 @@
 			width calc(50% - 10px)
 			float left
 			text-align left
+			
+.mfp-container
+	.left-arrow
+	.right-arrow
+		&:after
+			font-family $oasis-font
+			font-size 54px
+			margin 0
+		&:hover
+			cursor pointer
+		&--white
+			color white
+	.left-arrow
+		left 0
+		&:after
+			content '\e004'
+			
+	.right-arrow
+		right 0
+		&:after
+			content '\e005'
+			
+			

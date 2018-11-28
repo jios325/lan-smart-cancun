@@ -1,15 +1,17 @@
 @extends('layouts.main')
 @section('content')
 	<div class="main-section main-section__home">
-		<div class="main-section__home-head_home backgrounds" style="background-image: url({{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/' . $hotel->bgheader}})">
-			<div class="gradient-home"></div>
-			@include('booking.booking', ['class' => 'booking__home'])
-			<div class="main-section__home-container">
-				<div class="container-fluid">
-					<h1 class="title--home">
-						<span>{{$hotel->nombre_en}}</span>
-						{!! $hotel->apellido_hotel !!}
-					</h1>
+		<div id="main-section-home" class="main-section__home-head_home">
+			<div class="backgrounds" style="background-image: url({{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/' . $hotel->bgheader}})">
+				<div class="gradient-home"></div>
+				@include('booking.booking', ['class' => 'booking__home'])
+				<div class="main-section__home-container">
+					<div class="container-fluid">
+						<h1 class="title--home">
+							<span>{{$hotel->nombre_en}}</span>
+							{!! $hotel->apellido_hotel !!}
+						</h1>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -132,7 +134,7 @@
 									<img src="{{asset('img/icons/icon-restaurantes.png')}}" alt="">
 								</div>
 								
-								<a class="btn btn-transparent-white btn-transparent-flat">{{__	('rest_bares.ver_restaurantes')}}</a>
+								<a href="{{route( 'HotelRestaurantsAndBars' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}" class="btn btn-transparent-white btn-transparent-flat">{{__	('rest_bares.ver_restaurantes')}}</a>
 
 							</div>
 						</div>
@@ -147,7 +149,7 @@
 									<img src="{{asset('img/icons/icon-bares.png')}}" alt="">
 								</div>
 								
-								<a class="btn btn-transparent-white btn-transparent-flat">{{__	('rest_bares.ver_bares')}}</a>
+								<a href="{{route( 'HotelRestaurantsAndBars' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}" class="btn btn-transparent-white btn-transparent-flat">{{__	('rest_bares.ver_bares')}}</a>
 							</div>
 						</div>
 					</div>
@@ -165,7 +167,7 @@
 					<div class="grid-gallery--item">
 						<div class="grid-gallery--item-images--container popup-gallery--mobile slide_mobile dots">
 							@foreach($galeria_destacados as $galeria)
-								<div class="grid-gallery--item-images--item">
+								<div class="grid-gallery--item-images--item grid-gallery--item-image">
 									<a href="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $galeria->url}}" alt="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}" rel="noopener noreferrer nofollow">
 										<img src="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $galeria->url}}" alt="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}" title="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}">
 									</a>

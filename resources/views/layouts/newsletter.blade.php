@@ -1,8 +1,8 @@
 <div class="newsletter">
     <div class="gradient"></div>
     <div class="newsletter_contenedor">
+    	<div class="gradient-card-shadow-inside"></div>
     	<div class="container-fluid wrap-container">
-
 	        <div class="row center-xs middle-xs">
 	            <div class="col-xs-12">
 	                <div class="title">

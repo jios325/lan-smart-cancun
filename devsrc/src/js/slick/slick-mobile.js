@@ -28,6 +28,7 @@ $(document).ready(function () {
       var slidesToShow = 1
       var rows = 1
       var slidesPerRow = 1
+      var slide = ''
       if($(this).attr('data-slidestoshow')){
         slidesToShow = $(this).attr('data-slidestoshow')
       }
@@ -38,6 +39,7 @@ $(document).ready(function () {
         rows = $(this).attr('data-rows')
         slidesPerRow = $(this).attr('data-slidesperrow')
       }
+     
       $(this).slick({
         infinite: true,
         slidesToShow: slidesToShow,
@@ -52,7 +54,7 @@ $(document).ready(function () {
         focusOnSelect: false,
         swipeToSlide: false,
         touchMove: false,
-        swipe: false,
+        swipe: true,
         adaptiveHeight: true,
         mobileFirst: true,
         responsive: [

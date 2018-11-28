@@ -20,62 +20,62 @@ $(document).ready(function () {
     }).resize()
 
 
-function sizeTabsDesk(){
-    console.log('desktop')
-    $('.main-section__rest_y_bares--cards').each(function(index, el) {
-        var heightContainer = $(this).height()
-        //guarda altura original en data para futuras animaciones
-        $(this).attr('data-originalheight', heightContainer)
-
-        //altura de cada item del contenedor
-        var heightItem = $(this).children('.main-section__rest_y_bares--cards--item').height()
-        //calculo de altura de numero de filas en base a altura de item
-        var itemRows = (heightContainer / heightItem)
-        //solo se van a mostrar dos filas, por lo que hace calculo de cuantas se deben ocultar
-        var eliminateRows = (itemRows - 2 )
-        //altura a ocultar en base a las filas
-        var heightToHide = (heightItem * eliminateRows)
-        //nueva altura a asignar
-        var newHeight = (heightContainer - heightToHide)
-        //asigna altura y attr para futuras funciones
-        $(this).height(newHeight).attr('data-newheight', newHeight)
-        //altura de contenedor de cards mas el resto del contenido para asignarlo al padre
-        var heightTotal = $(this).parent().height()
-        $(this).parent().parent().height(heightTotal).attr('data-originalheight', heightTotal)
-    });
-}
-
-function sizeTabsMob(){
-    console.log('mobile')
-    if(!$('.tabs--slide').hasClass('ismobile')){
+    function sizeTabsDesk(){
+        console.log('desktop')
         $('.main-section__rest_y_bares--cards').each(function(index, el) {
             var heightContainer = $(this).height()
             //guarda altura original en data para futuras animaciones
             $(this).attr('data-originalheight', heightContainer)
+
             //altura de cada item del contenedor
             var heightItem = $(this).children('.main-section__rest_y_bares--cards--item').height()
-            //nueva altura a asignar 2 items en slide
-            var newHeight = heightItem * 2
-            console.log(heightItem)
-            console.log(newHeight)
+            //calculo de altura de numero de filas en base a altura de item
+            var itemRows = (heightContainer / heightItem)
+            //solo se van a mostrar dos filas, por lo que hace calculo de cuantas se deben ocultar
+            var eliminateRows = (itemRows - 2 )
+            //altura a ocultar en base a las filas
+            var heightToHide = (heightItem * eliminateRows)
+            //nueva altura a asignar
+            var newHeight = (heightContainer - heightToHide)
             //asigna altura y attr para futuras funciones
             $(this).height(newHeight).attr('data-newheight', newHeight)
-        });
-        $('.tabs--slide').each(function(index, el) {
-            var heightTotal = $(this).children('.tabs--slide-content:first-child').height()
-            console.log(heightTotal)
-            $(this).height(heightTotal).attr('data-originalheight', heightTotal)
-            $(this).addClass('ismobile')
+            //altura de contenedor de cards mas el resto del contenido para asignarlo al padre
+            var heightTotal = $(this).parent().height()
+            $(this).parent().parent().height(heightTotal).attr('data-originalheight', heightTotal)
         });
     }
-    
 
-   
-    // //altura de contenedor de cards mas el resto del contenido para asignarlo al padre
-    //     var heightTotal = $(this).parent().height()
-    //     $(this).parent().parent().height(heightTotal).attr('data-originalheight', heightTotal)
-}
+    function sizeTabsMob(){
+        console.log('mobile')
+        if(!$('.tabs--slide').hasClass('ismobile')){
+            $('.main-section__rest_y_bares--cards').each(function(index, el) {
+                var heightContainer = $(this).height()
+                //guarda altura original en data para futuras animaciones
+                $(this).attr('data-originalheight', heightContainer)
+                //altura de cada item del contenedor
+                var heightItem = $(this).children('.main-section__rest_y_bares--cards--item').height()
+                //nueva altura a asignar 2 items en slide
+                var newHeight = heightItem * 2
+                console.log(heightItem)
+                console.log(newHeight)
+                //asigna altura y attr para futuras funciones
+                $(this).height(newHeight).attr('data-newheight', newHeight)
+            });
+            $('.tabs--slide').each(function(index, el) {
+                var heightTotal = $(this).children('.tabs--slide-content:first-child').height()
+                console.log(heightTotal)
+                $(this).height(heightTotal).attr('data-originalheight', heightTotal)
+                $(this).addClass('ismobile')
+            });
+        }
+        
 
+       
+        // //altura de contenedor de cards mas el resto del contenido para asignarlo al padre
+        //     var heightTotal = $(this).parent().height()
+        //     $(this).parent().parent().height(heightTotal).attr('data-originalheight', heightTotal)
+    }
+    //boton ver mas
     $('.viewmore').each(function(index, el) {
         let $this = $(this)
         let $content = $this.parent().siblings('.viewmore_contenido')
@@ -125,4 +125,15 @@ function sizeTabsMob(){
 
         });    
     });
+
+    //fix de chrome
+
+    function calcVH($class) {
+      var vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+      document.getElementById($class).setAttribute("style", "height:" + vH + "px;");
+    }
+    if($('#main-section-home').length){
+        calcVH('main-section-home');
+        window.addEventListener('onorientationchange', calcVH, true);
+    }
 })
