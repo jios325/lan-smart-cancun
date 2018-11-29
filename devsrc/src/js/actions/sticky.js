@@ -49,6 +49,7 @@ $(document).ready(function () {
 		        if ($(this).scrollTop() >= totalHeight) { // medida desde caja hasta top en home//hace sticky
 		          if ($(window).width() >= 1024) { // solo desktop
 		            $('.booking').addClass('booking__fixed')
+		            $('.booking .booking-container').addClass('booking-container__fixed')
 		          } 
 		          else {
 		            $('.booking').addClass('booking__fixed--mobile')
@@ -56,7 +57,8 @@ $(document).ready(function () {
 		        } 
 		        else if ($(this).scrollTop() <= totalHeight) {
 		          if ($(window).width() >= 1024) { // solo desktop
-		            $('.booking').removeClass('booking__fixed')
+		            $('.booking').removeClass('booking__fixed') 
+		            $('.booking .booking-container').removeClass('booking-container__fixed')
 		          } 
 		          else {
 		            $('.booking').removeClass('booking__fixed--mobile')
@@ -76,6 +78,7 @@ $(document).ready(function () {
       } 
       else if (windowWidthBooking < 1024) { //mob
         $('.booking').removeClass('booking__fixed')
+        $('.booking .booking-container').removeClass('booking-container__fixed')
       }
     }
   })

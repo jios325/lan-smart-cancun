@@ -1,4 +1,5 @@
 import './modules/menu'
+import './modules/booking'
 
 import './modals/magnific'
 

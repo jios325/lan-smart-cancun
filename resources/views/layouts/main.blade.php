@@ -2,6 +2,7 @@
 <html lang="{{App::getLocale()}}">
 	<head>
 		@include('layouts.styles')
+		@include('layouts.metas')
 	</head>
 	<body class="{{$hotel->uri}}">
 		@include('layouts.menu')

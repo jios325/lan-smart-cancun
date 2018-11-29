@@ -2,10 +2,119 @@
 	&-container
 		display none
 		+from-width(5)
-			display block
+			display block	
+		.booking_contenedor--inputs
+			display flex
+			flex-flow row
+			flex-wrap wrap
+			align-items center
+			justify-content center
+			text-align center
+			min-height: 400px
+			padding-top: 30px
+			.date
+			.cupon_button
+			.reserva_button
+				flex-basis 100%
+				max-width 100%
+			.adultos_ninos
+				flex-basis 100%
+				max-width 100%
+				display flex
+				flex-flow row
+				flex-wrap wrap
+				align-items center
+				justify-content center
+				> div
+					flex-basis 50%
+					max-width 50%
+			.cupon_button
+				input
+					line-height 45px
+					height 45px
+					background transparent
+					border 1px solid black
+					width 195px
+					text-transform uppercase
+					font-size 14px
+					text-align center
+					color black
+					&::placeholder
+						color black
+			.date
+				input
+					background: none
+					border: none
+					line-height: 45px
+					color $gray-3e
+					font-size 16px
+					text-align center
+					font-weight 300
+					width 100%
+					cursor pointer
+					&::placeholder
+						color $gray-3e
+						font-weight 300
+		&__fixed
+			.booking
+				&-content
+					padding 0 20px
+					.title--booking
+						display none
+				&_contenedor--inputs
+					min-height 80px
+					padding-top 0
+					.date
+					.cupon_button
+					.reserva_button
+					.adultos_ninos
+						padding 0 1rem
+					.date
+					.adultos_ninos
+						flex-basis 25%
+						max-width 25%
+					.cupon_button
+						flex-basis 16.66666667%
+						max-width 16.66666667%
+						input
+							background rgba(255,255,255,0.25)
+							border none !important
+							color white !important
+							width 100%
+							font-size 11px
+							&::placeholder
+								color white !important
+					.reserva_button
+						flex-basis 33.33333333%
+						max-width 33.33333333%
+						input
+							width 100%
+					.date
+						input
+							color white
+							font-size 13px
+							// border-bottom 1px solid white
+							&::placeholder
+								color white
+						.select
+							label:after
+								color: white
+						&:after
+							content ''
+							display block
+							border-bottom 1px solid white
+							width 60%
+							margin 0 auto
+					
+	
+	&-content
+		text-align center		
+		padding 30px 0	
 	&-button
+		cursor pointer
 		+from-width(5)
 			display none
+			width 100%
 	&__home
 		position absolute
 		z-index $zi-booking
@@ -36,6 +145,14 @@
 				background-repeat no-repeat !important
 				background-size cover !important
 				min-height 100%
+				&__fixed
+					border-radius 0
+					height 80px
+					background $gray-32 !important
+					color white
+					position fixed
+					width 100%
+					min-height 80px
 	&__intern
 		position fixed
 		z-index $zi-booking
@@ -56,26 +173,31 @@
 			height 45px
 			line-height 45px
 			font-size 14px
-			padding-bottom 20px
-		
-			
+			padding-bottom 20px		
 	&__fixed
 		position fixed
 		bottom inherit
 		top 100px
 		left inherit
-		width auto
-		height auto
+		width 100%
+		height 80px
 		right 50px
 		width 235px
 		.booking-container
 			display none
 		.booking-button
-			display block
+			display block 
 		.btn-reserva-booking
 			height 45px
 			line-height 45px
 			font-size 12px	
+		&.open
+			right 0
+			width 100%
+			.booking-container
+				display block
+			.booking-button
+				display none 
 		&--mobile
 			position fixed
 			bottom inherit
@@ -87,4 +209,5 @@
 				line-height 45px
 				font-size 14px
 				padding-bottom 20px
+		
 		

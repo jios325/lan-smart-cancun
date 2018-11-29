@@ -1,6 +1,9 @@
 .grand-oasis-cancun
 	a.btn-reserva
+	input.btn-reserva
 		background $gocBkg
+	input.btn-reserva
+		border 0
 	a.btn-transparent
 		color $gocBkg
 		border 1px solid $gocBkg
@@ -27,10 +30,22 @@
 			background  $gocBkg
 		.title--booking
 			color $gocBkg
+		.cupon_button
+			input
+				border 1px solid $gocBkg
+				color $gocBkg
+				&::placeholder
+					color $gocBkg
 		&__home
 			+from-width(5)
 				.booking-container
-					background url('../img/booking/goc-book.png') center no-repeat			
+					background url('../img/booking/goc-book.png') center no-repeat	
+		// &-container__fixed
+		// 	.booking
+		// 		&_contenedor--inputs
+		// 			.cupon_button
+		// 				input 
+		// 					color white
 	.principal
 		background $gocBkg
 		+from-width(5)
