@@ -6,6 +6,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+		<script src="https://unpkg.com/sweetalert@2.1.0/dist/sweetalert.min.js"></script>
 		@if (App::environment('local'))
 			<script type="text/javascript" src="http://localhost:9000/js/common.bundle.js"></script>
         	<script type="text/javascript" src="http://localhost:9000/js/app.bundle.js"></script>

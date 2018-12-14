@@ -1,51 +1,91 @@
 .grand-oasis-cancun
+	//misc
 	a.btn-reserva
 	input.btn-reserva
 		background $gocBkg
-	input.btn-reserva
-		border 0
-	a.btn-transparent
-		color $gocBkg
-		border 1px solid $gocBkg
-		box-shadow none
-	a.btn-transparent-border
-		color $gocBkg
-		border 1px solid $gocBkg
-	a.more_information
-		color $gocBkg
-		&:after
-			border-bottom 1px solid $gocBkg
-	a.btn.btn-transparent-white.btn-transparent-flat
-		&:hover
+	input
+		&.btn-reserva
+			border 0
+	a
+		&.btn-transparent
 			color $gocBkg
-			background white
+			border 1px solid $gocBkg
+			box-shadow none
+		&.btn-transparent-border
+			color $gocBkg
+			border 1px solid $gocBkg
+		&.more_information
+			color $gocBkg
+			&:after
+				border-bottom 1px solid $gocBkg
+		&.btn.btn-transparent-white.btn-transparent-flat
+			&:hover
+				color $gocBkg
+				background white
 	.gradient-after
 		&:after
 			background rgba($gocHov, 0.45)
 		&-strong
 			&:after
 				background rgba($gocHov, 0.6)
+	.title--section
+		color $gocColor
+		&:after
+			border-bottom 1px solid $gocColor
+
+	//booking
+	.select2
+		&-container
+			&--custom-select--adultos_ninos
+				.select2-dropdown
+					color $gocBkg
+				.select2-results__option--highlighted
+					color white
+					background $gocBkg
+	.date-picker-wrapper
+		.month-wrapper table .day
+			&.checked
+				background-color rgba($gocBkg, .8) 
+				color white !important
+			&.toMonth.hovering
+				background-color rgba($gocBkg, .6)
+				color white !important
+			&.real-today
+				background-color $gocBkg
+				color white !important
+		.first-date-selected
+		.last-date-selected
+			background-color $gocBkg !important
+		.date-range-length-tip
+			background-color $gocBkg
+			color white
+			&:after
+				border-top 4px solid $gocBkg
 	.booking
 		.btn-reserva-booking
 			background  $gocBkg
 		.title--booking
-			color $gocBkg
-		.cupon_button
-			input
-				border 1px solid $gocBkg
+			+from-width(5)
 				color $gocBkg
-				&::placeholder
+		.booking__cupon
+			&__label
+				span
 					color $gocBkg
+			&__input
+				input
+					+from-width(5)
+						border 1px solid $gocBkg
+						color $gocBkg
+						&::placeholder
+							color $gocBkg
+				&--button
+					+from-width(5)
+						color $gocBkg
 		&__home
 			+from-width(5)
 				.booking-container
 					background url('../img/booking/goc-book.png') center no-repeat	
-		// &-container__fixed
-		// 	.booking
-		// 		&_contenedor--inputs
-		// 			.cupon_button
-		// 				input 
-		// 					color white
+	//menu
 	.principal
 		background $gocBkg
 		+from-width(5)
@@ -60,13 +100,30 @@
 					&.active
 					&:hover
 						background $gocBkg
-	.title--section
-		color $gocColor
-		&:after
-			border-bottom 1px solid $gocColor
-	.newsletter
-		.btn-newsletter
-			background  $gocBkg
+	//sections
+	.main-section
+		&__rooms
+			&--room
+				.room--description
+					h2
+						color white
+						+from-width(5)
+							color $gocBkg
+		&__rest_y_bares
+			// .tabs-image--item.active
+			// 	.tabs-image--item-container
+			// 		filter none
+			// 		&:after
+			// 			background rgba($gocHov, 0.45)
+			#tab1:checked ~ nav .tab1
+			#tab2:checked ~ nav .tab2
+				&.tabs-image--item.small 
+					.tabs-image--item-container
+						filter none
+						&:after
+							background rgba($gocHov, 0.45)
+						
+	//cards
 	.card--home--room
 		.card--topimage--item
 			&__image--buttons
@@ -78,17 +135,122 @@
 						color white
 						border 1px solid white
 						box-shadow 0 2px 14px 0 rgba(0,0,0,0.1)
-	// .tabs-image--item-content
-	// 	a.btn
-	// 		&:hover
-	// 			color $gocBkg
+	//galeria
 	.grid-gallery--item-image
 		a:hover
 			+from-width(5)
 				&:after
 					background rgba($gocHov, 0.65)
+	//redes sociales
 	.footer--redes-sociales
-		color $gocBkg
+		color $gocBkg	
+	//newsletter				
+	.newsletter
+		.btn-newsletter
+			background  $gocBkg
+	
+.grand-oasis-sens
+	//misc
+	a.btn-reserva
+	input.btn-reserva
+		background $gosBkg
+	input
+		&.btn-reserva
+			border 0
+	a
+		&.btn-transparent
+			color $gosBkg
+			border 1px solid $gosBkg
+			box-shadow none
+		&.btn-transparent-border
+			color $gosBkg
+			border 1px solid $gosBkg
+		&.more_information
+			color $gosBkg
+			&:after
+				border-bottom 1px solid $gosBkg
+		&.btn.btn-transparent-white.btn-transparent-flat
+			&:hover
+				color $gosBkg
+				background white
+	.gradient-after
+		&:after
+			background rgba($gosHov, 0.45)
+		&-strong
+			&:after
+				background rgba($gosHov, 0.6)
+	.title--section
+		color $gosColor
+		&:after
+			border-bottom 1px solid $gosColor
+	//booking
+	.select2
+		&-container
+			&--custom-select--adultos_ninos
+				.select2-dropdown
+					color $gosBkg
+				.select2-results__option--highlighted
+					color white
+					background $gosBkg
+	.date-picker-wrapper
+		.month-wrapper table .day
+			&.checked
+				background-color rgba($gosBkg, .8) 
+				color white !important
+			&.toMonth.hovering
+				background-color rgba($gosBkg, .6)
+				color white !important
+			&.real-today
+				background-color $gosBkg
+				color white !important
+		.first-date-selected
+		.last-date-selected
+			background-color $gosBkg !important
+		.date-range-length-tip
+			background-color $gosBkg
+			color white
+			&:after
+				border-top 4px solid $gosBkg
+	.booking
+		.btn-reserva-booking
+			background  $gosBkg
+		.title--booking
+			+from-width(5)
+				color $gosBkg
+		.booking__cupon
+			&__label
+				span
+					color $gosBkg
+			&__input
+				input
+					+from-width(5)
+						border 1px solid $gosBkg
+						color $gosBkg
+						&::placeholder
+							color $gosBkg
+				&--button
+					+from-width(5)
+						color $gosBkg
+		&__home
+			+from-width(5)
+				.booking-container
+					background url('../img/booking/gos-book.png') center no-repeat	
+	//menu
+	.principal
+		background $gosBkg
+		+from-width(5)
+			background none
+		.logo_field
+			.icon
+				color $gosColor
+		.lang_d
+			> li.language
+				.submenu li
+					color $gosColor
+					&.active
+					&:hover
+						background $gosBkg
+	//sections
 	.main-section
 		&__rooms
 			&--room
@@ -96,91 +258,39 @@
 					h2
 						color white
 						+from-width(5)
-							color $gocBkg
+							color $gosBkg
 		&__rest_y_bares
 			.tabs-image--item.active
 				.tabs-image--item-container
 					filter none
 					&:after
-						background rgba($gocHov, 0.45)
-				
-.the-pyramid-at-grand-oasis
-	a.btn-reserva
-		background $black
-	a.btn-transparent
-		color $black
-		border 1px solid $black
-		box-shadow none
-	a.btn-transparent-border
-		color $black
-		border 1px solid $black
-	.booking
-		.btn-reserva-booking
-			background  $black
-		.title--booking
-			color $black
-		&__home
-			+from-width(5)
-				.booking-container
-					background url('../img/booking/pyr-book.png') center no-repeat			
-	.principal
-		background $black
-		+from-width(5)
-			background none
-		.logo_field
-			.icon
-				color $black
-		.lang_d
-			> li.language
-				.submenu li
-					color $black
-					&.active
-					&:hover
-						background $black
-	.title--section
-		color $black
-		&:after
-			border-bottom 1px solid $black
-	.newsletter
-		.btn-newsletter
-			background  $black
+						background rgba($gosHov, 0.45)
+						
+	//cards
 	.card--home--room
 		.card--topimage--item
 			&__image--buttons
 				a
-					color $black
-					border 1px solid $black
+					color $gosBkg
+					border 1px solid $gosBkg
 					box-shadow none
 					+from-width(4)
 						color white
 						border 1px solid white
 						box-shadow 0 2px 14px 0 rgba(0,0,0,0.1)
-	.tabs-image--item-container
-		&:after
-			background rgba($black, 0.45)
-	.tabs-image--item-content
-		a.btn
-			&:hover
-				color $black
-	.grid-gallery--item-images--item
+	//galeria
+	.grid-gallery--item-image
 		a:hover
 			+from-width(5)
 				&:after
-					background rgba($black, 0.65)
+					background rgba($gosHov, 0.65)
+	//redes sociales
 	.footer--redes-sociales
-		color $black
-	.main-section
-		&__rooms
-			&--room
-				.room--description
-					h2
-						color white
-						+from-width(5)
-							color $black
-		&__rest_y_bares
-			.tabs-image--item.active
-				.tabs-image--item-container
-					filter none
-					&:after
-						background rgba($black, 0.45)
-				
+		color $gosBkg	
+	//newsletter				
+	.newsletter
+		.btn-newsletter
+			background  $gosBkg
+	
+	
+	

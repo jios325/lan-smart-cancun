@@ -24,15 +24,7 @@ class HomeController extends Controller
     //     return redirect()->action('Home\HomeController@home', ['slug' => 'grand-oasis-cancun']);
     //     // return $this->home($request, ['slug' => 'grand-oasis-cancun']);
     // }
-    public function index(Http $request, $s = null){   
-
-        //si es null asigna default goc, si no, manda el hotel necesario
-        if($s == null){
-            $slug = 'grand-oasis-cancun';
-        }
-        else{
-            $slug = $s;
-        }
+    public function index(Http $request, $slug = 'grand-oasis-cancun'){   
 
         $hotel = DB::table('hotel')
             ->leftJoin('redes_sociales', 'hotel.redes_sociales_id', '=', 'redes_sociales.id')
@@ -81,7 +73,6 @@ class HomeController extends Controller
             ->where('hotel_galeria.id_hotel', $hotel->id_hotel)
             ->where('hotel_galeria_categoria.uri_categoria_hotel', 'destacados')
             ->get();
-        // dd($hotel);
-        return view('home.home')->with(['hotel' => $hotel, 'habitaciones' => $habitaciones->sortBy('orden'), 'galeria_destacados' => $galeriaDestacado]);
+        return view('home.home')->with(['hotel' => $hotel, 'habitaciones' => $habitaciones->sortBy('orden'), 'galeria_destacados' => $galeriaDestacado, 'is_mobile' => $request->isMobile]);
     }
 }

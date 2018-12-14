@@ -1,5 +1,5 @@
 .date-picker-wrapper
-	z-index $zi-booking
+	z-index $zi-menu
 	.close-booking
 		position absolute
 		right 0
@@ -13,3 +13,21 @@
 			content '\e007'
 			font-family $oasis-font
 			display block
+	.month-wrapper table .day
+		&.checked
+			background-color rgba($black, .8) 
+			color white !important
+		&.toMonth.hovering
+			background-color rgba($black, .6)
+			color white !important
+		&.real-today
+			background-color $black
+			color white !important
+	.first-date-selected
+	.last-date-selected
+		background-color $black !important
+	.date-range-length-tip
+		background-color $black
+		color white
+		&:after
+			border-top 4px solid $black

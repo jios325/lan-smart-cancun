@@ -34,6 +34,10 @@ Route::prefix('es')
             ->name('HotelGalleryEs');
         Route::get('/{slug}/servicios', 'Hoteles\ServiciosController@index')
             ->name('HotelServiciosEs');
+        //Guarda variable de restaurante o bar en session
+        Route::post('/ajax/set_restbar', function(){
+             Session::put( 'restBar', Input::get('restBar') );
+        });
     });
 
 Route::prefix('en')
@@ -53,4 +57,8 @@ Route::prefix('en')
             ->name('HotelGalleryEn');
         Route::get('/{slug}/services', 'Hoteles\ServiciosController@index')
             ->name('HotelServiciosEn');
+        //Guarda variable de restaurante o bar en session
+        Route::post('/ajax/set_restbar', function(){
+             Session::put( 'restBar', Input::get('restBar') );
+        });
     });
