@@ -2,7 +2,7 @@
 @section('content')
 	<div class="main-section main-section__home">
 		<div id="main-section-home" class="main-section__home-head_home">
-			<div class="backgrounds" style="background-image: url({{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/' . $hotel->bgheader}})">
+			<div class="backgrounds" style="background-image: url({{'https://oasishoteles.sfo2.digitaloceanspaces.com/assets/' . $hotel->bgheader}}); background-position: 50% 35% !important">
 				<div class="gradient-home"></div>
 				@include('booking.booking', ['class' => 'booking__home'])
 				<div class="main-section__home-container">
@@ -40,7 +40,7 @@
 								<div class="gradient-card-shadow"></div>
 								<div class="slide_arrows">
 									@foreach($habitacion->galeria as $img)
-			                            <img src="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $img->url}}" alt="">
+			                            <img src="{{'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $img->url}}" alt="">
 			                        @endforeach
 								</div>
 								<div class="card--topimage--item__image--title">
@@ -174,17 +174,17 @@
 			<div class="main-section__home-galeria--container">
 				<div class="grid-gallery">
 					<div class="grid-gallery--item">
-						<div class="youtube-player" data-id="{{ last(explode('/', $hotel->video)) }}" data-thumbnail="{{($hotel->uri == 'oasis-palm') ? 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/img/hoteles/oasis-palm/header/op_vid.jpg' : 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/' . $hotel->bgheader}}"></div>
+						<div class="youtube-player" data-id="{{ last(explode('/', $hotel->video)) }}" data-thumbnail="{{($hotel->uri == 'oasis-palm') ? 'https://oasishoteles.sfo2.digitaloceanspaces.com/assets/img/hoteles/oasis-palm/header/op_vid.jpg' : 'https://oasishoteles.sfo2.digitaloceanspaces.com/assets/' . $hotel->bgheader}}"></div>
 					</div>
 					<div class="grid-gallery--item">
 						<div class="grid-gallery--item-images--container popup-gallery--mobile slide_mobile dots">
 							@foreach($galeria_destacados as $galeria)
 								<div class="grid-gallery--item-images--item grid-gallery--item-image">
 									@if($is_mobile == true)
-										<img src="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $galeria->url}}" alt="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}" title="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}">
+										<img src="{{'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $galeria->url}}" alt="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}" title="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}">
 									@else
-										<a href="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $galeria->url}}" alt="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}" rel="noopener noreferrer nofollow">
-											<img src="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $galeria->url}}" alt="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}" title="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}">
+										<a href="{{'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $galeria->url}}" alt="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}" rel="noopener noreferrer nofollow">
+											<img src="{{'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $galeria->url}}" alt="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}" title="{{(App::getLocale() == 'es') ? $galeria->alt_es : $galeria->alt_en}}">
 										</a>
 									@endif
 								</div>
@@ -213,10 +213,13 @@
 						
 					</div>
 					<div class="map-container--item">
-						<div class="map-container--item--container">
+						<div class="map-container--item--container map_img_cont">
 							<img src="{{asset('img/mapas/'.$hotel->uri.'.jpg')}}" alt="">
+							<div class="message_click">
+                                <span>{{__('home.message_click')}}</span>
+                            </div>
 						</div>
-						
+						<div class="embed-container insert-map" id="mapToInsert" data-hotels="one" data-render="auto" data-namehotel="{{$hotel->nombre_en}}" data-coorx="{{$hotel->corx}}" data-coory="{{$hotel->cory}}" data-pin="{{'https://oasishoteles.sfo2.digitaloceanspaces.com/assets/img/logos/pines/'.$hotel->puntero}}" data-direccion="{{$hotel->direccion_es}}" data-uri="{{$hotel->uri}}" data-locationmap="{{$hotel->id_location_map}}"></div>
 					</div>
 				</div>
 			</div>

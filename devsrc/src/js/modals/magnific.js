@@ -1,12 +1,17 @@
-$(document).ready(function () {	
-	//modal texto
-		$('.modal--popup').magnificPopup({
+export function modalPopup(){
+	$('.modal--popup').each(function(index, el) {
+		$(this).magnificPopup({
 		    // fixedContentPos: false,
 		    type: 'inline',
 		    removalDelay: 300, // delay removal by X to allow out-animation
 		    closeOnContentClick: true
 	  	})
-
+	});
+}
+$(document).ready(function () {	
+	//modal texto
+		modalPopup()
+		
   	//popup de galeria
 	  	$('.popup-gallery').magnificPopup({
 			delegate: 'a',

@@ -21,6 +21,8 @@
 	                        <div class="form-group no-margin">
 	                            <input type="hidden" name="ip" value="{{config('app.ip')}}">
 	                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+	                            <input type="hidden" name="hotel" value="{{$hotel->uri}}">
+	                            <input type="hidden" name="lang" value="{{App::getLocale()}}">
 	                            <input type="email" name="email" placeholder="{{__('newsletter.email')}}" required>
 	                        </div>
 	                        <input class="btn btn-newsletter" type="submit" value="{{__('newsletter.suscribirme')}}">

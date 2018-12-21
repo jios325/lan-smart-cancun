@@ -14,6 +14,15 @@ $(document).ready(function () {
 				$('body').css('overflow', 'auto')
 			}
 		});
+		$(document).keydown(function(e) {
+		    // ESCAPE key pressed
+		    if (e.keyCode == 27) {
+		        if($('.principal').hasClass('opened')){
+					$('.principal').removeClass('opened');
+					$('body').css('overflow', 'auto')
+				}
+		    }
+		});
 	//dropdown para submenu
 		$('.has_submenu').each(function(index, el) {
 			$(this).hover(function() {

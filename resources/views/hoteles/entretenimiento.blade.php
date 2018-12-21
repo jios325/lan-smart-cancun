@@ -21,10 +21,10 @@
 							<div class="card--topimage--item__image">
 								<div class="gradient-card-shadow-darkfull"></div>
 								<div class="rel card--topimage--item__image--img">
-									<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $entretenimiento->portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de locación '.$entretenimiento->nombre : 'Cover image of a sample of the location '.$entretenimiento->nombre}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de locación '.$entretenimiento->nombre : 'Cover image of a sample of the location '.$entretenimiento->nombre}}">
+									<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $entretenimiento->portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de locación '.$entretenimiento->nombre : 'Cover image of a sample of the location '.$entretenimiento->nombre}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de locación '.$entretenimiento->nombre : 'Cover image of a sample of the location '.$entretenimiento->nombre}}">
 								</div>
 								<div class="card--topimage--item__image--title centered-md">
-		                            <img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $entretenimiento->logo}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Locacion '.$entretenimiento->nombre : 'White Logo '.$entretenimiento->nombre.' Location'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Locacion '.$entretenimiento->nombre : 'White Logo '.$entretenimiento->nombre.' Location'}}">
+		                            <img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $entretenimiento->logo}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Locacion '.$entretenimiento->nombre : 'White Logo '.$entretenimiento->nombre.' Location'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Locacion '.$entretenimiento->nombre : 'White Logo '.$entretenimiento->nombre.' Location'}}">
 		                        </div>
 		                        <div class="card--topimage--item__image--footer">
 		                        	<a href="#popupEntretenimiento-{{$entretenimiento->uri}}" class="btn btn-transparent-white btn-transparent-flat modal--popup" >
@@ -38,10 +38,10 @@
 									<button title="Close (ESC)" type="button" class="mfp-close"></button>
 									<div class="deco-popup-content col-2">
 										<div class="deco-popup-content--image">
-											<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $entretenimiento->portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de locación '.$entretenimiento->nombre : 'Cover image of a sample of the location '.$entretenimiento->nombre}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de locación '.$entretenimiento->nombre : 'Cover image of a sample of the location '.$entretenimiento->nombre}}">
+											<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $entretenimiento->portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de locación '.$entretenimiento->nombre : 'Cover image of a sample of the location '.$entretenimiento->nombre}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de locación '.$entretenimiento->nombre : 'Cover image of a sample of the location '.$entretenimiento->nombre}}">
 										</div>
 										<div class="deco-popup-content--info">
-											<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $entretenimiento->logo}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Locacion '.$entretenimiento->nombre : 'White Logo '.$entretenimiento->nombre.' Location'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Locacion '.$entretenimiento->nombre : 'White Logo '.$entretenimiento->nombre.' Location'}}">
+											<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $entretenimiento->logo}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Locacion '.$entretenimiento->nombre : 'White Logo '.$entretenimiento->nombre.' Location'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Locacion '.$entretenimiento->nombre : 'White Logo '.$entretenimiento->nombre.' Location'}}">
 											@if($entretenimiento->descripcion)
 												<div class="deco-popup-content--info--descr">
 													{!!$entretenimiento->descripcion!!}

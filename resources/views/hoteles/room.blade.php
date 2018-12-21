@@ -11,7 +11,7 @@
 				<div class="room--image">
 					<div class="slide_arrows">
 						@foreach($habitacion->galeria as $img)
-			                <img src="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $img->url}}" alt="">
+			                <img src="{{'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $img->url}}" alt="">
 			            @endforeach
 
 					</div>

@@ -10,6 +10,7 @@ import './actions/heights'
 import './actions/ajax-calls'
 
 import './google/yt-video'
+import './google/map'
 
 import './slick/slick-slide'
 import './slick/slick-arrows'

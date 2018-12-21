@@ -20,10 +20,10 @@
                 	<i class="icon icon-icono-oasis"></i>
                 </li>
 				<li>
-                	<a>{{__('footer.aviso_privacidad')}}</a>
+                	<a href="https://oasishoteles.com/es/aviso-de-privacidad">{{__('footer.aviso_privacidad')}}</a>
               	</li>
               	<li>
-                    <a>{{__('footer.politicas_cancelacion')}}</a>
+                    <a href="https://oasishoteles.com/es/politicas-de-cancelacion">{{__('footer.politicas_cancelacion')}}</a>
                 </li>
                 <li>
                     <a href={{(App::getLocale() === 'es') ? 'https://blog.oasishoteles.net/es/' : 'https://blog.oasishoteles.net/en/'}} target="_blank" rel="noopener noreferrer nofollow">Blog</a>
@@ -32,7 +32,7 @@
                     <a href="http://fundacionoasis.com/" target="_blank" rel="noopener noreferrer nofollow">{{__('footer.fundacion')}}</a>
                 </li>
                 <li>
-                    <a>{{__('footer.contacto')}}</a>
+                    <a href="https://oasishoteles.com/es/contacto">{{__('footer.contacto')}}</a>
                 </li>
                 <li>
                 	<a href="{{'https://oasishoteles.com/'.App::getLocale()}}">oasishoteles.com</a>

@@ -25,7 +25,10 @@ class NavComposer
      */
     public function compose(View $view)
     {
-
+        $hotelesEntretenimiento = DB::table('entretenimiento_detalle')
+            ->get();
+        $view->with('entretenimiento',$hotelesEntretenimiento);
+        
         $route = Route::currentRouteName();
         // genera las redirecciones a otros idiomas, si la ruta no tiene nombre solo redirige al home
         if($route) {

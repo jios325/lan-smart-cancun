@@ -29,6 +29,7 @@ Route::prefix('es')
         Route::get('/{slug}/restaurantes_y_bares', 'Hoteles\RestaurantsController@index')
             ->name('HotelRestaurantsAndBarsEs');
         Route::get('/{slug}/entretenimiento', 'Hoteles\EntretenimientoController@index')
+            ->where('slug', 'the-pyramid-at-grand-oasis|grand-oasis-cancun|oasis-cancun-lite|the-sian-ka-an-at-grand-sens|grand-oasis-sens')
             ->name('HotelEntertainmentEs');
         Route::get('/{slug}/galeria', 'Hoteles\GaleriaController@index')
             ->name('HotelGalleryEs');
@@ -38,6 +39,12 @@ Route::prefix('es')
         Route::post('/ajax/set_restbar', function(){
              Session::put( 'restBar', Input::get('restBar') );
         });
+        //Newsletter
+        Route::post('/ajax/subscribe/{slug}', 'Mail\MailController@subscribe');
+        Route::get('/subscribe/{slug}/activate/{idSlug}', 'Mail\MailController@activateView')
+            ->name('subscribeActivateEs');
+        // Route::get('/{slug}/subscribe', 'Mail\MailController@viewSubscribe')
+        //     ->name('ViewSubscribeEs');
     });
 
 Route::prefix('en')
@@ -52,6 +59,7 @@ Route::prefix('en')
         Route::get('/{slug}/restaurants_and_bars', 'Hoteles\RestaurantsController@index')
             ->name('HotelRestaurantsAndBarsEn');
         Route::get('/{slug}/entertainment', 'Hoteles\EntretenimientoController@index')
+            ->where('slug', 'the-pyramid-at-grand-oasis|grand-oasis-cancun|oasis-cancun-lite|the-sian-ka-an-at-grand-sens|grand-oasis-sens')
             ->name('HotelEntertainmentEn');
         Route::get('/{slug}/gallery', 'Hoteles\GaleriaController@index')
             ->name('HotelGalleryEn');
@@ -61,4 +69,10 @@ Route::prefix('en')
         Route::post('/ajax/set_restbar', function(){
              Session::put( 'restBar', Input::get('restBar') );
         });
+        //Newsletter
+        Route::post('/ajax/subscribe/{slug}', 'Mail\MailController@subscribe');
+        Route::get('/subscribe/{slug}/activate/{idSlug}', 'Mail\MailController@activateView')
+            ->name('subscribeActivateEn');
+        // Route::get('/{slug}/subscribe', 'Mail\MailController@viewSubscribe')
+        //     ->name('ViewSubscribeEn');
     });

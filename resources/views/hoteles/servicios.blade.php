@@ -24,7 +24,7 @@
 	                        </div>
 						</div>
 						<div class="card--topimage--item__info pt-50-im">
-							<a href="https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/factsheets/spa/completo/factsheet-{{App::getLocale()}}.pdf" class="btn btn-transparent-border" target="_blank">
+							<a href="https://oasishoteles.sfo2.digitaloceanspaces.com/assets/factsheets/spa/completo/factsheet-{{App::getLocale()}}.pdf" class="btn btn-transparent-border" target="_blank">
 								{{__('home.mas_info')}}
 		                    </a>
 						</div>
@@ -41,7 +41,7 @@
 	                        </div>
 						</div>
 						<div class="card--topimage--item__info pt-50-im">
-							<a href="https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/factsheets/spa/completo/factsheet-{{App::getLocale()}}.pdf" class="btn btn-transparent-border" target="_blank">
+							<a href="https://oasishoteles.sfo2.digitaloceanspaces.com/assets/factsheets/spa/completo/factsheet-{{App::getLocale()}}.pdf" class="btn btn-transparent-border" target="_blank">
 								{{__('home.mas_info')}}
 		                    </a>
 						</div>

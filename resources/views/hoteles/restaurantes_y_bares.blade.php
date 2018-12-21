@@ -1,5 +1,6 @@
 @extends('layouts.main', ['classMenu' => 'intern__nav'])
 @section('content')
+	{{session('restBar')}}
 	<div class="main-section main-section__rest_y_bares ">
 		@include('booking.booking', ['class' => 'booking__intern'])
 		<div class="divisor divisor-intern"></div>
@@ -10,8 +11,8 @@
 			<div class="pc-tab">
 				<div class="tabs--section tabs-image--container tabs-navbar">
 				
-					<input checked="{{(!session()->has('restBar') || session('restBar') == 'restaurantes') ? 'checked' : ''}}" id="tab1" type="radio" name="pct" />
-					<input checked="{{(session('restBar') == 'bares') ? 'active' : ''}}" id="tab2" type="radio" name="pct" />
+					<input {{(!session()->has('restBar') || session('restBar') == 'restaurantes') ? 'checked' : ''}} id="tab1" type="radio" name="pct" />
+					<input {{(session('restBar') == 'bares') ? 'checked' : ''}} id="tab2" type="radio" name="pct" />
 					<nav>
 						<ul>
 							<li class="tabs-image--item restaurantes small gotoSlide tab1">
@@ -64,9 +65,9 @@
 									<div class="main-section__rest_y_bares--cards--item card--item-over--item">
 										<div  class="card--item-over-container">
 											<a href="#popupRest-{{$restaurant_otro->pivot->url}}" class="modal--popup  gradient-after-strong">
-												<img class="img-background" src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $restaurant_otro->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$restaurant_otro->nombre : 'Cover image of a sample of the restaurant '.$restaurant_otro->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$restaurant_otro->nombre : 'Cover image of a sample of the restaurant '.$restaurant_otro->nombre.' Restaurant'}}">
+												<img class="img-background" src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $restaurant_otro->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$restaurant_otro->nombre : 'Cover image of a sample of the restaurant '.$restaurant_otro->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$restaurant_otro->nombre : 'Cover image of a sample of the restaurant '.$restaurant_otro->nombre.' Restaurant'}}">
 												<div class="card--item-over-content">
-													<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $restaurant_otro->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$restaurant_otro->nombre : 'White Logo '.$restaurant_otro->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$restaurant_otro->nombre : 'White Logo '.$restaurant_otro->nombre.' Restaurant'}}">
+													<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $restaurant_otro->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$restaurant_otro->nombre : 'White Logo '.$restaurant_otro->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$restaurant_otro->nombre : 'White Logo '.$restaurant_otro->nombre.' Restaurant'}}">
 													<span>{{(App::getLocale() == 'es') ? $restaurant_otro->pivot->concepto_es : $restaurant_otro->pivot->concepto_en}}</span>
 												</div>
 											</a>
@@ -78,10 +79,10 @@
 												<button title="Close (ESC)" type="button" class="mfp-close"></button>
 												<div class="deco-popup-content col-2">
 													<div class="deco-popup-content--image">
-														<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $restaurant_otro->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$restaurant_otro->nombre : 'Cover image of a sample of the restaurant '.$restaurant_otro->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$restaurant_otro->nombre : 'Cover image of a sample of the restaurant '.$restaurant_otro->nombre.' Restaurant'}}">
+														<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $restaurant_otro->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$restaurant_otro->nombre : 'Cover image of a sample of the restaurant '.$restaurant_otro->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$restaurant_otro->nombre : 'Cover image of a sample of the restaurant '.$restaurant_otro->nombre.' Restaurant'}}">
 													</div>
 													<div class="deco-popup-content--info">
-														<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $restaurant_otro->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$restaurant_otro->nombre : 'White Logo '.$restaurant_otro->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$restaurant_otro->nombre : 'White Logo '.$restaurant_otro->nombre.' Restaurant'}}">
+														<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $restaurant_otro->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$restaurant_otro->nombre : 'White Logo '.$restaurant_otro->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$restaurant_otro->nombre : 'White Logo '.$restaurant_otro->nombre.' Restaurant'}}">
 														
 														<div class="deco-popup-content--info--descr">
 															<p>{{(App::getLocale() == 'es') ? $restaurant_otro->pivot->concepto_es : $restaurant_otro->pivot->concepto_en}}</p>
@@ -93,9 +94,11 @@
 									</div>
 								@endforeach
 							</div>
-							<div class="main-section__rest_y_bares--button center-xs visible-md visible-lg">
-								<a class="btn btn-reserva viewmore ">{{__('home.ver_mas')}}</a>
-							</div>
+							@if(count($restaurants['otros']) > 8)
+								<div class="main-section__rest_y_bares--button center-xs visible-md visible-lg">
+									<a class="btn btn-reserva viewmore ">{{__('home.ver_mas')}}</a>
+								</div>
+							@endif
 						</div>
 						<div class="tab2">
 							<div class="divisor"></div>
@@ -114,9 +117,9 @@
 									<div class="main-section__rest_y_bares--cards--item card--item-over--item">
 										<div class="card--item-over-container">
 											<a href="#popupBares-{{$bar_otro->pivot->url}}" class="gradient-after-strong modal--popup">
-												<img class="img-background" src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $bar_otro->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra del bar '.$bar_otro->nombre : 'Cover image of a sample of the bar '.$bar_otro->nombre}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra del bar '.$bar_otro->nombre : 'Cover image of a sample of the bar '.$bar_otro->nombre}}">
+												<img class="img-background" src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $bar_otro->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra del bar '.$bar_otro->nombre : 'Cover image of a sample of the bar '.$bar_otro->nombre}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra del bar '.$bar_otro->nombre : 'Cover image of a sample of the bar '.$bar_otro->nombre}}">
 												<div class="card--item-over-content">
-													<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $bar_otro->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Bar '.$bar_otro->nombre : 'White Logo '.$bar_otro->nombre.' Bar'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Bar '.$bar_otro->nombre : 'White Logo '.$bar_otro->nombre.' Bar'}}">
+													<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $bar_otro->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Bar '.$bar_otro->nombre : 'White Logo '.$bar_otro->nombre.' Bar'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Bar '.$bar_otro->nombre : 'White Logo '.$bar_otro->nombre.' Bar'}}">
 													<span>{{(App::getLocale() == 'es') ? $bar_otro->pivot->concepto_es : $bar_otro->pivot->concepto_en}}</span>
 												</div>
 												
@@ -129,10 +132,10 @@
 												<button title="Close (ESC)" type="button" class="mfp-close"></button>
 												<div class="deco-popup-content col-2">
 													<div class="deco-popup-content--image">
-														<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $bar_otro->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra del bar '.$bar_otro->nombre : 'Cover image of a sample of the bar '.$bar_otro->nombre}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra del bar '.$bar_otro->nombre : 'Cover image of a sample of the bar '.$bar_otro->nombre}}">
+														<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $bar_otro->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra del bar '.$bar_otro->nombre : 'Cover image of a sample of the bar '.$bar_otro->nombre}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra del bar '.$bar_otro->nombre : 'Cover image of a sample of the bar '.$bar_otro->nombre}}">
 													</div>
 													<div class="deco-popup-content--info">
-														<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $bar_otro->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Bar '.$bar_otro->nombre : 'White Logo '.$bar_otro->nombre.' Bar'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Bar '.$bar_otro->nombre : 'White Logo '.$bar_otro->nombre.' Bar'}}">
+														<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $bar_otro->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Bar '.$bar_otro->nombre : 'White Logo '.$bar_otro->nombre.' Bar'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Bar '.$bar_otro->nombre : 'White Logo '.$bar_otro->nombre.' Bar'}}">
 														<div class="deco-popup-content--info--descr">
 															<p>{{(App::getLocale() == 'es') ? $bar_otro->pivot->concepto_es : $bar_otro->pivot->concepto_en}}</p>
 														</div>
@@ -143,9 +146,11 @@
 									</div>
 								@endforeach
 							</div>
-							<div class="main-section__rest_y_bares--button center-xs visible-md visible-lg">
-								<a class="btn btn-reserva viewmore">{{__('home.ver_mas')}}</a>
-							</div>
+							@if(count($bares['otros']) > 8)
+								<div class="main-section__rest_y_bares--button center-xs visible-md visible-lg">
+									<a class="btn btn-reserva viewmore">{{__('home.ver_mas')}}</a>
+								</div>
+							@endif
 						</div>
 					</section>
 				</div>
@@ -164,9 +169,9 @@
 						<div class="rest--exclusivos--item ">
 							<div class="rest--exclusivos--item--content">
 								<a href="#popupExclusivos-{{$exclusivo->pivot->url}}" class=" backgrounds modal--popup">
-									<img class="img-background" src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $exclusivo->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$exclusivo->nombre : 'Cover image of a sample of the restaurant '.$exclusivo->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$exclusivo->nombre : 'Cover image of a sample of the restaurant '.$exclusivo->nombre.' Restaurant'}}">
+									<img class="img-background" src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $exclusivo->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$exclusivo->nombre : 'Cover image of a sample of the restaurant '.$exclusivo->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$exclusivo->nombre : 'Cover image of a sample of the restaurant '.$exclusivo->nombre.' Restaurant'}}">
 									<div class="img-logo">
-										<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $exclusivo->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$exclusivo->nombre : 'White Logo '.$exclusivo->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$exclusivo->nombre : 'White Logo '.$exclusivo->nombre.' Restaurant'}}">
+										<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $exclusivo->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$exclusivo->nombre : 'White Logo '.$exclusivo->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$exclusivo->nombre : 'White Logo '.$exclusivo->nombre.' Restaurant'}}">
 									</div>
 								</a>
 							</div>
@@ -177,10 +182,10 @@
 									<button title="Close (ESC)" type="button" class="mfp-close"></button>
 									<div class="deco-popup-content">
 										<div class="deco-popup-content--image">
-											<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $exclusivo->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$exclusivo->nombre : 'Cover image of a sample of the restaurant '.$exclusivo->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$exclusivo->nombre : 'Cover image of a sample of the restaurant '.$exclusivo->nombre.' Restaurant'}}">
+											<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $exclusivo->pivot->img_portada}}" alt="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$exclusivo->nombre : 'Cover image of a sample of the restaurant '.$exclusivo->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Imágen portada muestra de restaurante '.$exclusivo->nombre : 'Cover image of a sample of the restaurant '.$exclusivo->nombre.' Restaurant'}}">
 										</div>
 										<div class="deco-popup-content--info">
-											<img src="{{ 'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $exclusivo->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$exclusivo->nombre : 'White Logo '.$exclusivo->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$exclusivo->nombre : 'White Logo '.$exclusivo->nombre.' Restaurant'}}">
+											<img src="{{ 'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $exclusivo->pivot->logo_blanco}}" alt="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$exclusivo->nombre : 'White Logo '.$exclusivo->nombre.' Restaurant'}}" title="{{(App::getLocale() == 'es') ? 'Logo Blanco Restaurante '.$exclusivo->nombre : 'White Logo '.$exclusivo->nombre.' Restaurant'}}">
 											<div class="deco-popup-content--info--descr">
 												<p>{{(App::getLocale() == 'es') ? $exclusivo->pivot->concepto_es : $exclusivo->pivot->concepto_en}}</p>
 											</div>

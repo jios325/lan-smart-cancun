@@ -14,7 +14,7 @@
 			<ul class="col-xs-12 col-md-2">
 				<li class="visible-md visible-lg logo_field">
 					<a>
-						<img class="logo" src="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/assets/' . $hotel->logo}}">
+						<img class="logo" src="{{'https://oasishoteles.sfo2.digitaloceanspaces.com/assets/' . $hotel->logo}}">
 						<i class="icon icon-icono-oasis hide"></i>
 					</a>
 				</li>
@@ -39,24 +39,26 @@
                 'class=active' : '' }}>
 					<a href="{{route( 'HotelGallery' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.galeria')}}</a>
 				</li>
-				<li {{ (preg_match( "/(HotelEntertainment)/", Route::currentRouteName())) ?
-                'class=active' : '' }}>
-					<a href="{{route( 'HotelEntertainment' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.entretenimiento')}}</a>
-				</li>
+				@if(count($entretenimiento->where('id_hotel', $hotel->id_hotel)->all()) > 0)
+					<li {{ (preg_match( "/(HotelEntertainment)/", Route::currentRouteName())) ?
+	                'class=active' : '' }}>
+						<a href="{{route( 'HotelEntertainment' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.entretenimiento')}}</a>
+					</li>
+				@endif
 				<li {{ (preg_match( "/(HotelServicios)/", Route::currentRouteName())) ?
                 'class=active' : '' }}>
 					<a href="{{route( 'HotelServicios' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.servicios')}}</a>
 				</li>
 				<li class="hidden-md hidden-lg">
-					<a>llamar</a>
+					<a href="tel:529982874478">llamar</a>
 				</li>
 				<li class="hidden-md hidden-lg">
-					<a>contacto</a>
+					<a href="https://oasishoteles.com/es/contacto">contacto</a>
 				</li>
 			</ul>
 			<ul class="col-xs-12 col-md-2 visible-md visible-lg lang_d">
 				<li>
-					<a><i class="icon icon-phone"></i></a>
+					<a href="tel:529982874478"><i class="icon icon-phone"></i></a>
 				</li>
 				<li>
 					<a><i class="icon icon-envelope"></i></a>

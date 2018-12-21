@@ -162,7 +162,7 @@ var hotelMaxPax = {
     'MaxAdults': 3,
     'childrenAllowed': false
   },
-  'oh-cancun': {
+  'oh-cancunmxn': {
     'destino': 'Oh! The Urban Oasis',
     'coddestino': 'ohbyoasismxn',
     'maxPax': 3,

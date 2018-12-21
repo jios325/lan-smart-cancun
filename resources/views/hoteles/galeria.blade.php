@@ -14,8 +14,8 @@
 						@foreach($firstGal as $item_gal)
 								<div class="grid-gallery--col">	
 									<div class="grid-gallery--item-image">
-										<a href="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $item_gal->url}}" alt="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}" rel="noopener noreferrer nofollow">
-											<img src="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $item_gal->url}}" alt="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}" title="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}">
+										<a href="{{'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $item_gal->url}}" alt="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}" rel="noopener noreferrer nofollow">
+											<img src="{{'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $item_gal->url}}" alt="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}" title="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}">
 										</a>
 									</div>
 								</div>
@@ -23,8 +23,8 @@
 						<div class="grid-gallery--col">	
 							@foreach($gallery as $item_gal)	
 								<div class="grid-gallery--item-image">
-									<a href="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $item_gal->url}}" alt="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}" rel="noopener noreferrer nofollow">
-										<img src="{{'https://oasishoteles.sfo2.cdn.digitaloceanspaces.com/' . $item_gal->url}}" alt="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}" title="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}">
+									<a href="{{'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $item_gal->url}}" alt="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}" rel="noopener noreferrer nofollow">
+										<img src="{{'https://oasishoteles.sfo2.digitaloceanspaces.com/' . $item_gal->url}}" alt="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}" title="{{(App::getLocale() == 'es') ? $item_gal->alt_es : $item_gal->alt_en}}">
 									</a>
 								</div>
 							@endforeach
