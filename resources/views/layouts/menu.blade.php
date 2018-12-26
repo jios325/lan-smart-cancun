@@ -53,7 +53,7 @@
 					<a href="tel:529982874478">llamar</a>
 				</li>
 				<li class="hidden-md hidden-lg">
-					<a href="https://oasishoteles.com/es/contacto">contacto</a>
+					<a href="https://oasishoteles.com/es/contacto" target="_blank" rel="noopener noreferrer nofollow">contacto</a>
 				</li>
 			</ul>
 			<ul class="col-xs-12 col-md-2 visible-md visible-lg lang_d">
@@ -61,7 +61,7 @@
 					<a href="tel:529982874478"><i class="icon icon-phone"></i></a>
 				</li>
 				<li>
-					<a><i class="icon icon-envelope"></i></a>
+					<a href="https://oasishoteles.com/es/contacto" target="_blank" rel="noopener noreferrer nofollow"><i class="icon icon-envelope"></i></a>
 				</li>
 				<li class="language has_submenu">
 					<a><i class="icon icon-lenguaje"></i></a>
