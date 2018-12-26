@@ -10,7 +10,7 @@
 		<div class="grid-gallery container-fluid wrap-container popup-gallery">
 				@foreach($galeria as $gallery)
 					<div class="grid-gallery--row">
-						<?$firstGal = $gallery->splice(0,1)?>
+						@php $firstGal = $gallery->splice(0,1) @endphp
 						@foreach($firstGal as $item_gal)
 								<div class="grid-gallery--col">	
 									<div class="grid-gallery--item-image">
