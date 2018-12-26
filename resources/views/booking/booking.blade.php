@@ -14,7 +14,7 @@
             <form class="formHotelHab" data-mercado="{{(config("app.market")=='México')?'mx':'general'}}" action="{{App::getLocale() =='es' ?'https://reservas.oasishoteles.com':'https://booking.oasishoteles.com'}}/bookcore/v3cpax/search-dispo.htm" method="post" target="_blank" data-slug="{{$hotel->uri.$market}}">
                 <div class="etWHide">
                     <input type="hidden" name="destino" value="" id="codDestino"/>
-                    <input type="hidden" name="coddestino" value"" id="hotel"/>
+                    <input type="hidden" name="coddestino" value="" id="hotel"/>
                     @if(preg_match( "/(grand-oasis-sens)|(oh-cancun)|(the-sian-ka-an)/",$hotel->uri))
                         <input type="hidden" name="ninos" value="0"/>
                     @endif
