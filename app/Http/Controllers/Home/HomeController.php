@@ -14,6 +14,7 @@ use Illuminate\Http\Request as Http;
 class HomeController extends Controller
 {
     protected $lang;
+    protected $hoteluri;
 
     public function __construct()
     {
@@ -24,8 +25,8 @@ class HomeController extends Controller
     //     return redirect()->action('Home\HomeController@home', ['slug' => 'grand-oasis-cancun']);
     //     // return $this->home($request, ['slug' => 'grand-oasis-cancun']);
     // }
-    public function index(Http $request, $slug = 'grand-oasis-cancun'){   
-
+    public function index(Http $request){   
+        $slug = config('app.hoteluri');
         $hotel = DB::table('hotel')
             ->leftJoin('redes_sociales', 'hotel.redes_sociales_id', '=', 'redes_sociales.id')
             ->leftJoin('hotel_ubicacion', 'hotel_ubicacion.id_hotel','hotel.id_hotel')

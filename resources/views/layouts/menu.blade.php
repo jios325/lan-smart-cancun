@@ -29,25 +29,25 @@
 				</li>
 				<li {{ (preg_match( "/(HotelRooms)/", Route::currentRouteName())) ?
                 'class=active' : '' }}>
-					<a href="{{route( 'HotelRooms' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.habitaciones')}}</a>
+					<a href="{{route( 'HotelRooms' . title_case(App::getLocale()))}}">{{__('menu.habitaciones')}}</a>
 				</li>
 				<li {{ (preg_match( "/(HotelRestaurantsAndBars)/", Route::currentRouteName())) ?
                 'class=active' : '' }}>
-					<a href="{{route( 'HotelRestaurantsAndBars' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.rest_y_bares')}}</a>
+					<a href="{{route( 'HotelRestaurantsAndBars' . title_case(App::getLocale()))}}">{{__('menu.rest_y_bares')}}</a>
 				</li>
 				<li {{ (preg_match( "/(HotelGallery)/", Route::currentRouteName())) ?
                 'class=active' : '' }}>
-					<a href="{{route( 'HotelGallery' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.galeria')}}</a>
+					<a href="{{route( 'HotelGallery' . title_case(App::getLocale()))}}">{{__('menu.galeria')}}</a>
 				</li>
 				@if(count($entretenimiento->where('id_hotel', $hotel->id_hotel)->all()) > 0)
 					<li {{ (preg_match( "/(HotelEntertainment)/", Route::currentRouteName())) ?
 	                'class=active' : '' }}>
-						<a href="{{route( 'HotelEntertainment' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.entretenimiento')}}</a>
+						<a href="{{route( 'HotelEntertainment' . title_case(App::getLocale()))}}">{{__('menu.entretenimiento')}}</a>
 					</li>
 				@endif
 				<li {{ (preg_match( "/(HotelServicios)/", Route::currentRouteName())) ?
                 'class=active' : '' }}>
-					<a href="{{route( 'HotelServicios' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}">{{__('menu.servicios')}}</a>
+					<a href="{{route( 'HotelServicios' . title_case(App::getLocale()))}}">{{__('menu.servicios')}}</a>
 				</li>
 				<li class="hidden-md hidden-lg">
 					<a href="tel:529982874478">llamar</a>

@@ -12,7 +12,7 @@ class Hotel extends Model
 
     public function rooms()
     {
-        return $this->belongsToMany('App\Models\Room', 'hotel_habitaciones_por_hotel', 'id_hotel', 'id_hotel_habitacion_cat')->withPivot('estado', 'id_hotel_habitaciones_por_hotel', 'descripcion_es', 'descripcion_en', 'orden');
+        return $this->belongsToMany('App\Models\Room', 'hotel_habitaciones_por_hotel', 'id_hotel', 'id_hotel_habitacion_cat')->withPivot('estado', 'id_hotel_habitaciones_por_hotel', 'descripcion_es', 'descripcion_en', 'orden')->where('estado','1');
     }
     public function foodAndBeverages()
     {

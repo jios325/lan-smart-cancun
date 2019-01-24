@@ -133,13 +133,6 @@
 								<div class="tabs-icon">
 									<img src="{{asset('img/icons/icon-restaurantes.png')}}" alt="">
 								</div>
-								<!-- <form action="" class="send_restaurant">
-									<input type="hidden" name="_token" value="{{ csrf_token() }}">
-									<input type="hidden" name="type" value="restaurantes">
-									<input type="hidden" name="slug" value="{{$hotel->uri}}">
-									<a class="btn btn-transparent-white btn-transparent-flat submit_restaurant">{{__('rest_bares.ver_restaurantes')}}</a>
-								</form> -->
-								<!-- <a href="{{route( 'HotelRestaurantsAndBars' . title_case(App::getLocale()), [ 'slug' => $hotel->uri, 'type' => 'resttaurantes'])}}" class="btn btn-transparent-white btn-transparent-flat">{{__('rest_bares.ver_restaurantes')}}</a> -->
 								<a class="btn btn-transparent-white btn-transparent-flat setRestBar" data-type="restaurantes" data-slug="{{$hotel->uri}}">{{__('rest_bares.ver_restaurantes')}}</a> 
 
 							</div>
@@ -154,13 +147,6 @@
 								<div class="tabs-icon">
 									<img src="{{asset('img/icons/icon-bares.png')}}" alt="">
 								</div>
-								<!-- <form action="" class="send_restaurant">
-									<input type="hidden" name="_token" value="{{ csrf_token() }}">
-									<input type="hidden" name="type" value="bares">
-									<input type="hidden" name="slug" value="{{$hotel->uri}}">
-									<a class="btn btn-transparent-white btn-transparent-flat submit_restaurant">{{__('rest_bares.ver_bares')}}</a>
-								</form> -->
-								<!-- <a href="{{route( 'HotelRestaurantsAndBars' . title_case(App::getLocale()), [ 'slug' => $hotel->uri])}}" class="btn btn-transparent-white btn-transparent-flat">{{__	('rest_bares.ver_bares')}}</a> -->
 								<a class="btn btn-transparent-white btn-transparent-flat setRestBar" data-type="bares" data-slug="{{$hotel->uri}}">{{__	('rest_bares.ver_bares')}}</a> 
 							</div>
 						</div>

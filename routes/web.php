@@ -20,20 +20,19 @@ Route::middleware(['checkIp', 'setLocals', 'marketValues'])
 Route::prefix('es')
 	->middleware(['checkIp', 'setLocals', 'marketValues'])
 	->group(function () {
-        Route::get('/', 'Home\HomeController@index')
-            ->name('RedirectHomeEs');
-   		Route::get('/{slug}', 'Home\HomeController@index')
+        // Route::get('/', 'Home\HomeController@index')
+        //     ->name('RedirectHomeEs');
+   		Route::get('/', 'Home\HomeController@index')
         	->name('HomeEs');
-        Route::get('/{slug}/habitaciones', 'Hoteles\RoomsController@index')
+        Route::get('/habitaciones', 'Hoteles\RoomsController@index')
             ->name('HotelRoomsEs');
-        Route::get('/{slug}/restaurantes_y_bares', 'Hoteles\RestaurantsController@index')
+        Route::get('/restaurantes_y_bares', 'Hoteles\RestaurantsController@index')
             ->name('HotelRestaurantsAndBarsEs');
-        Route::get('/{slug}/entretenimiento', 'Hoteles\EntretenimientoController@index')
-            ->where('slug', 'the-pyramid-at-grand-oasis|grand-oasis-cancun|oasis-cancun-lite|the-sian-ka-an-at-grand-sens|grand-oasis-sens')
+        Route::get('/entretenimiento', 'Hoteles\EntretenimientoController@index')
             ->name('HotelEntertainmentEs');
-        Route::get('/{slug}/galeria', 'Hoteles\GaleriaController@index')
+        Route::get('/galeria', 'Hoteles\GaleriaController@index')
             ->name('HotelGalleryEs');
-        Route::get('/{slug}/servicios', 'Hoteles\ServiciosController@index')
+        Route::get('/servicios', 'Hoteles\ServiciosController@index')
             ->name('HotelServiciosEs');
         //Guarda variable de restaurante o bar en session
         Route::post('/ajax/set_restbar', function(){
@@ -43,27 +42,26 @@ Route::prefix('es')
         Route::post('/ajax/subscribe/{slug}', 'Mail\MailController@subscribe');
         Route::get('/subscribe/{slug}/activate/{idSlug}', 'Mail\MailController@activateView')
             ->name('subscribeActivateEs');
-        // Route::get('/{slug}/subscribe', 'Mail\MailController@viewSubscribe')
+        // Route::get('/subscribe', 'Mail\MailController@viewSubscribe')
         //     ->name('ViewSubscribeEs');
     });
 
 Route::prefix('en')
 	->middleware(['checkIp', 'setLocals', 'marketValues'])
 	->group(function () {
-        Route::get('/', 'Home\HomeController@index')
-            ->name('RedirectHomeEn');
-    	Route::get('/{slug}', 'Home\HomeController@index')
+        // Route::get('/', 'Home\HomeController@index')
+        //     ->name('RedirectHomeEn');
+    	Route::get('/', 'Home\HomeController@index')
         	->name('HomeEn');
-        Route::get('/{slug}/rooms', 'Hoteles\RoomsController@index')
+        Route::get('/rooms', 'Hoteles\RoomsController@index')
             ->name('HotelRoomsEn');
-        Route::get('/{slug}/restaurants_and_bars', 'Hoteles\RestaurantsController@index')
+        Route::get('/restaurants_and_bars', 'Hoteles\RestaurantsController@index')
             ->name('HotelRestaurantsAndBarsEn');
-        Route::get('/{slug}/entertainment', 'Hoteles\EntretenimientoController@index')
-            ->where('slug', 'the-pyramid-at-grand-oasis|grand-oasis-cancun|oasis-cancun-lite|the-sian-ka-an-at-grand-sens|grand-oasis-sens')
+        Route::get('/entertainment', 'Hoteles\EntretenimientoController@index')
             ->name('HotelEntertainmentEn');
-        Route::get('/{slug}/gallery', 'Hoteles\GaleriaController@index')
+        Route::get('/gallery', 'Hoteles\GaleriaController@index')
             ->name('HotelGalleryEn');
-        Route::get('/{slug}/services', 'Hoteles\ServiciosController@index')
+        Route::get('/services', 'Hoteles\ServiciosController@index')
             ->name('HotelServiciosEn');
         //Guarda variable de restaurante o bar en session
         Route::post('/ajax/set_restbar', function(){
@@ -73,6 +71,6 @@ Route::prefix('en')
         Route::post('/ajax/subscribe/{slug}', 'Mail\MailController@subscribe');
         Route::get('/subscribe/{slug}/activate/{idSlug}', 'Mail\MailController@activateView')
             ->name('subscribeActivateEn');
-        // Route::get('/{slug}/subscribe', 'Mail\MailController@viewSubscribe')
+        // Route::get('/subscribe', 'Mail\MailController@viewSubscribe')
         //     ->name('ViewSubscribeEn');
     });

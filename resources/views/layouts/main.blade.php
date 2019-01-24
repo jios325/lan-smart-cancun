@@ -4,7 +4,7 @@
 		@include('layouts.styles')
 		@include('layouts.metas')
 	</head>
-	<body class="{{$hotel->uri}}">
+	<body class="{{config('app.hoteluri')}}">
 		@include('layouts.menu')
 		<div>
 			@section('content') @show

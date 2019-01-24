@@ -22,8 +22,8 @@ class RestaurantsController extends Controller
         App::setLocale($this->lang);
     }
 
-    public function index(Http $request, $slug){
-
+    public function index(Http $request){
+        $slug = config('app.hoteluri');
         $hotel = DB::table('hotel')
             ->leftJoin('redes_sociales', 'hotel.redes_sociales_id', '=', 'redes_sociales.id')
             ->leftJoin('hotel_ubicacion', 'hotel_ubicacion.id_hotel','hotel.id_hotel')

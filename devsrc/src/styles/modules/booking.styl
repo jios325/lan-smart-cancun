@@ -29,7 +29,7 @@
 		position fixed
 		width 100%
 		+from-width(5)
-			display block
+			// display block
 			position absolute
 			border-radius 0 0 20px 20px
 			box-shadow 0 1px 5px 0 rgba(0,0,0,0.23)
@@ -147,6 +147,13 @@
 				display block
 			.booking-button
 				display none 
+	&__home
+		+from-width(5)
+			.booking-container
+				display block
+			&.booking__fixed
+				.booking-container__fixed
+					display none
 	&.open
 		right 0
 		width 100%
